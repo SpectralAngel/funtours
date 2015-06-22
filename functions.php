@@ -247,7 +247,6 @@ function sparkling_scripts() {
 	wp_enqueue_script('jquery-googlemap', get_template_directory_uri().'/template/js/jquery.rd-google-map.js');
 	wp_enqueue_script('wow', get_template_directory_uri().'/template/js/wow.js');
 	wp_enqueue_script('camera', get_template_directory_uri().'/template/js/camera.js');
-	// wp_enqueue_script('booking', get_template_directory_uri().'/template/js/booking/booking.js');
 	wp_enqueue_script('jquery-ui', get_template_directory_uri().'/template/js/booking/jquery-ui-1.10.3.custom.min.js');
 	wp_enqueue_script('jquery-placeholder', get_template_directory_uri().'/template/js/booking/jquery.placeholder.js');
 	wp_enqueue_script('jquery-placeholder', get_template_directory_uri().'/template/js/booking/booking/regula.js');

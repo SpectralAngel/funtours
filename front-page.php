@@ -19,15 +19,16 @@
 	<header>
 		<div class="header_panel">
 			<div class="container">
-				<div class="brand col-md-6">
-					<h1 class="brand_name"><a
-							href="<?php home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
+				<div class="brand col-md-6" data-equal-group="5">
+					<h1 class="brand_name">
+						<a href="<?php home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
 					</h1>
-
 					<p class="brand_slogan">Guide</p>
 				</div>
-				<div class="main-menu">
-					<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+				<div id="main-menu-wrapper" class="col-md-6" data-equal-group="5">
+					<div id="main-menu">
+						<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+					</div>
 				</div>
 			</div>
 		</div>
