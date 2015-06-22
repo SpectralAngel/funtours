@@ -36,34 +36,6 @@
 
 					<p class="brand_slogan">Guide</p>
 				</div>
-				<div class="booking_wr">
-					<form id="bookingForm" class="booking-form">
-						<h2 class="center">Best places to stay</h2>
-						<h4 class="center">Explore the planet</h4>
-
-						<div class="tmInput">
-							<input name="Name" placeHolder="Name" type="text"
-							       data-constraints="@NotEmpty @Required @AlphaSpecial">
-						</div>
-						<div class="tmInput">
-							<input name="E-mail" placeHolder="Your E-mail"
-							       type="text"
-							       data-constraints="@NotEmpty @Required @Email">
-						</div>
-						<div class="tmInput">
-							<input name="Message" placeHolder="Your Message"
-							       type="text"
-							       data-constraints="@NotEmpty @Required">
-						</div>
-						<a href="#" data-type="submit">Get the best offers</a>
-
-						<p>
-							<small>* Ceplicaboserde neraflorem ipsumoditauteras
-								Monsequngni doloreptate sequsede
-							</small>
-						</p>
-					</form>
-				</div>
 			</div>
 		</div>
 		<div class="camera_container">
