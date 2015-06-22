@@ -7,9 +7,8 @@
  */
 
 function optionsframework_option_name() {
-	return 'Fun Tours';
+	return 'dazzling';
 }
-
 
 /**
  * Defines an array of options that will be used to generate the settings page and be saved in the database.
@@ -20,24 +19,24 @@ function optionsframework_option_name() {
 function optionsframework_options() {
 
 	// Layout options
-	$site_layout = array('pull-left' => esc_html__('Right Sidebar', 'sparkling'),'pull-right' => esc_html__('Left Sidebar', 'sparkling'));
+	$site_layout = array('pull-left' => __('Right Sidebar', 'dazzling'),'pull-right' => __('Left Sidebar', 'dazzling'));
 
-	// Test data
+		// Test data
 	$test_array = array(
-		'one'   => esc_html__('One', 'options_framework_theme'),
-		'two'   => esc_html__('Two', 'options_framework_theme'),
-		'three' => esc_html__('Three', 'options_framework_theme'),
-		'four'  => esc_html__('Four', 'options_framework_theme'),
-		'five'  => esc_html__('Five', 'options_framework_theme')
+		'one'   => __('One', 'options_framework_theme'),
+		'two'   => __('Two', 'options_framework_theme'),
+		'three' => __('Three', 'options_framework_theme'),
+		'four'  => __('Four', 'options_framework_theme'),
+		'five'  => __('Five', 'options_framework_theme')
 	);
 
 	// Multicheck Array
 	$multicheck_array = array(
-		'one'   => esc_html__('French Toast', 'options_framework_theme'),
-		'two'   => esc_html__('Pancake', 'options_framework_theme'),
-		'three' => esc_html__('Omelette', 'options_framework_theme'),
-		'four'  => esc_html__('Crepe', 'options_framework_theme'),
-		'five'  => esc_html__('Waffle', 'options_framework_theme')
+		'one'   => __('French Toast', 'options_framework_theme'),
+		'two'   => __('Pancake', 'options_framework_theme'),
+		'three' => __('Omelette', 'options_framework_theme'),
+		'four'  => __('Crepe', 'options_framework_theme'),
+		'five'  => __('Waffle', 'options_framework_theme')
 	);
 
 	// Multicheck Defaults
@@ -49,53 +48,60 @@ function optionsframework_options() {
 	// Typography Defaults
 	$typography_defaults = array(
 		'size'  => '14px',
-		'face'  => 'Open Sans',
+		'face'  => 'Helvetica Neue',
 		'style' => 'normal',
 		'color' => '#6B6B6B'
 	);
 
 	// Typography Options
 	$typography_options = array(
-		'sizes' => array( '6','10','12','14','15','16','18','20','24','28','32','36','42','48' ),
-		'faces' => array(
-			'arial'          => 'Arial',
-			'verdana'        => 'Verdana, Geneva',
-			'trebuchet'      => 'Trebuchet',
-			'georgia'        => 'Georgia',
-			'times'          => 'Times New Roman',
-			'tahoma'         => 'Tahoma, Geneva',
-			'Open Sans'      => 'Open Sans',
-			'palatino'       => 'Palatino',
-			'helvetica'      => 'Helvetica',
-			'Helvetica Neue' => 'Helvetica Neue'
-	),
-		'styles' => array( 'normal' => 'Normal','bold' => 'Bold' ),
-		'color'  => true
+    'sizes' => array( '6','10','12','14','15','16','18','20','24','28','32','36','42','48' ),
+    'faces' => array( 'arial'					=> 'Arial',
+											'verdana'        => 'Verdana, Geneva',
+											'trebuchet'      => 'Trebuchet',
+											'georgia'        => 'Georgia',
+											'times'          => 'Times New Roman',
+											'tahoma'         => 'Tahoma, Geneva',
+											'palatino'       => 'Palatino',
+											'helvetica'      => 'Helvetica',
+											'Helvetica Neue' => 'Helvetica Neue'
+											),
+    'styles' => array( 'normal' => 'Normal','bold' => 'Bold' ),
+    'color' => true
 	);
 
-	// $radio = array('0' => esc_html__('No', 'sparkling'),'1' => esc_html__('Yes', 'sparkling'));
+	// $radio = array('0' => __('No', 'dazzling'),'1' => __('Yes', 'dazzling'));
 
-	// Pull all the categories into an array
+		// Pull all the categories into an array
 	$options_categories = array();
 	$options_categories_obj = get_categories();
 	foreach ($options_categories_obj as $category) {
-		$options_categories[$category->cat_ID] = $category->cat_name;
+	        $options_categories[$category->cat_ID] = $category->cat_name;
 	}
 
 	// Pull all tags into an array
 	$options_tags = array();
 	$options_tags_obj = get_tags();
 	foreach ( $options_tags_obj as $tag ) {
-		$options_tags[$tag->term_id] = $tag->name;
+	        $options_tags[$tag->term_id] = $tag->name;
 	}
+
 
 	// Pull all the pages into an array
 	$options_pages = array();
 	$options_pages_obj = get_pages('sort_column=post_parent,menu_order');
 	$options_pages[''] = 'Select a page:';
 	foreach ($options_pages_obj as $page) {
-		$options_pages[$page->ID] = $page->post_title;
+	        $options_pages[$page->ID] = $page->post_title;
 	}
+
+	   	// Pull all the pages into an array
+	// $options_slider = array();
+	// $options_slider_obj = get_posts('post_type=custom_slider');
+	// $options_slider[''] = 'Select a slider:';
+	// foreach ($options_slider_obj as $post) {
+	  // 	$options_slider[$post->ID] = $post->post_title;
+	// }
 
 	// If using image radio buttons, define a directory path
 	$imagepath =  get_template_directory_uri() . '/images/';
@@ -107,39 +113,38 @@ function optionsframework_options() {
 	$options = array();
 
 	$options[] = array(
-		'name' => esc_html__('Main', 'sparkling'),
-		'type' => 'heading'
-	);
+		'name' => __('Main', 'dazzling'),
+		'type' => 'heading');
 
 	$options[] = array(
-		'name' => esc_html__('Do You want to display image slider on the Home Page?','sparkling'),
-		'desc' => esc_html__('Check if you want to enable slider', 'sparkling'),
-		'id'   => 'sparkling_slider_checkbox',
-		'std'  => 0,
+		'name' => __('Do You want to display image slider on the Home Page?','dazzling'),
+		'desc' => __('Check if you want to enable slider', 'dazzling'),
+		'id'   => 'dazzling_slider_checkbox',
+		'std'  => 1,
 		'type' => 'checkbox'
 	);
 
 	$options[] = array(
-		'name'    => esc_html__('Slider Category', 'sparkling'),
-		'desc'    => esc_html__('Select a category for the featured post slider', 'sparkling'),
-		'id'      => 'sparkling_slide_categories',
+		'name' 		=> __('Slider Category', 'dazzling'),
+		'desc'    => __('Select a category for the featured post slider', 'dazzling'),
+		'id'      => 'dazzling_slide_categories',
 		'type'    => 'select',
 		'class'   => 'hidden',
 		'options' => $options_categories
 	);
 
 	$options[] = array(
-		'name'  => esc_html__('Number of slide items', 'sparkling'),
-		'desc'  => esc_html__('Enter the number of slide items', 'sparkling'),
-		'id'    => 'sparkling_slide_number',
+		'name' 	=> __('Number of slide items', 'dazzling'),
+		'desc'  => __('Enter the number of slide items', 'dazzling'),
+		'id'    => 'dazzling_slide_number',
 		'std'   => '3',
 		'class' => 'hidden',
 		'type'  => 'text'
 	);
 
 	$options[] = array(
-		'name'    => esc_html__('Website Layout Options', 'sparkling'),
-		'desc'    => esc_html__('Choose between Left and Right sidebar options to be used as default', 'sparkling'),
+		'name' 		=> __('Website Layout Options', 'dazzling'),
+		'desc'    => __('Choose between Left and Right sidebar options to be used as default', 'dazzling'),
 		'id'      => 'site_layout',
 		'std'     => 'pull-left',
 		'type'    => 'select',
@@ -148,98 +153,98 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Element color', 'sparkling'),
-		'desc' => esc_html__('Default used if no color is selected', 'sparkling'),
+		'name' => __('Element color', 'dazzling'),
+		'desc' => __('Default used if no color is selected', 'dazzling'),
 		'id'   => 'element_color',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Element color on hover', 'sparkling'),
-		'desc' => esc_html__('Default used if no color is selected', 'sparkling'),
+		'name' => __('Element color on hover', 'dazzling'),
+		'desc' => __('Default used if no color is selected', 'dazzling'),
 		'id'   => 'element_color_hover',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Custom Favicon', 'sparkling'),
-		'desc' => esc_html__('Upload a 32px x 32px PNG/GIF image that will represent your websites favicon', 'sparkling'),
+		'name' => __('Custom Favicon', 'dazzling'),
+		'desc' => __('Upload a 32px x 32px PNG/GIF image that will represent your websites favicon', 'dazzling'),
 		'id'   => 'custom_favicon',
 		'std'  => '',
 		'type' => 'upload'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Action Button', 'sparkling'),
+		'name' => __('Action Button', 'dazzling'),
 		'type' => 'heading'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Call For Action Text', 'sparkling'),
-		'desc' => esc_html__('Enter the text for call for action section', 'sparkling'),
+		'name' => __('Call For Action Text', 'dazzling'),
+		'desc' => __('Enter the text for call for action section', 'dazzling'),
 		'id'   => 'w2f_cfa_text',
 		'std'  => '',
 		'type' => 'textarea'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Call For Action Button Title', 'sparkling'),
-		'desc' => esc_html__('Enter the title for Call For Action button', 'sparkling'),
+		'name' => __('Call For Action Button Title', 'dazzling'),
+		'desc' => __('Enter the title for Call For Action button', 'dazzling'),
 		'id'   => 'w2f_cfa_button',
 		'std'  => '',
 		'type' => 'text'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('CFA button link', 'sparkling'),
-		'desc' => esc_html__('Enter the link for Call For Action button', 'sparkling'),
+		'name' => __('CFA button link', 'dazzling'),
+		'desc' => __('Enter the link for Call For Action button', 'dazzling'),
 		'id'   => 'w2f_cfa_link',
 		'std'  => '',
 		'type' => 'text'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Call For Action Text Color', 'sparkling'),
-		'desc' => esc_html__('Default used if no color is selected', 'sparkling'),
+		'name' => __('Call For Action Text Color', 'dazzling'),
+		'desc' => __('Default used if no color is selected', 'dazzling'),
 		'id'   => 'cfa_color',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Call For Action Background Color', 'sparkling'),
-		'desc' => esc_html__('Default used if no color is selected', 'sparkling'),
+		'name' => __('Call For Action Background Color', 'dazzling'),
+		'desc' => __('Default used if no color is selected', 'dazzling'),
 		'id'   => 'cfa_bg_color',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Call For Action Button Border Color', 'sparkling'),
-		'desc' => esc_html__('Default used if no color is selected', 'sparkling'),
+		'name' => __('Call For Action Button Border Color', 'dazzling'),
+		'desc' => __('Default used if no color is selected', 'dazzling'),
 		'id'   => 'cfa_btn_color',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Call For Action Button Text Color', 'sparkling'),
-		'desc' => esc_html__('Default used if no color is selected', 'sparkling'),
+		'name' => __('Call For Action Button Text Color', 'dazzling'),
+		'desc' => __('Default used if no color is selected', 'dazzling'),
 		'id'   => 'cfa_btn_txt_color',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Typography', 'sparkling'),
+		'name' => __('Typography', 'dazzling'),
 		'type' => 'heading'
 	);
 
 	$options[] = array(
-		'name'    => esc_html__('Main Body Text', 'sparkling'),
-		'desc'    => esc_html__('Used in P tags', 'sparkling'),
+		'name' 		=> __('Main Body Text', 'dazzling'),
+		'desc'    => __('Used in P tags', 'dazzling'),
 		'id'      => 'main_body_typography',
 		'std'     => $typography_defaults,
 		'type'    => 'typography',
@@ -247,155 +252,139 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Heading Color', 'sparkling'),
-		'desc' => esc_html__('Color for all headings (h1-h6)', 'sparkling'),
+		'name' => __('Heading Color', 'dazzling'),
+		'desc' => __('Color for all headings (h1-h6)', 'dazzling'),
 		'id'   => 'heading_color',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Link Color', 'sparkling'),
-		'desc' => esc_html__('Default used if no color is selected', 'sparkling'),
+		'name' => __('Link Color', 'dazzling'),
+		'desc' => __('Default used if no color is selected', 'dazzling'),
 		'id'   => 'link_color',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Link:hover Color', 'sparkling'),
-		'desc' => esc_html__('Default used if no color is selected', 'sparkling'),
+		'name' => __('Link:hover Color', 'dazzling'),
+		'desc' => __('Default used if no color is selected', 'dazzling'),
 		'id'   => 'link_hover_color',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Header', 'sparkling'),
+		'name' => __('Link:active Color', 'dazzling'),
+		'desc' => __('Default used if no color is selected', 'dazzling'),
+		'id'   => 'link_active_color',
+		'std'  => '',
+		'type' => 'color'
+	);
+
+	$options[] = array(
+		'name' => __('Header', 'dazzling'),
 		'type' => 'heading'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Top nav background color', 'sparkling'),
-		'desc' => esc_html__('Default used if no color is selected', 'sparkling'),
-		'id'   => 'nav_bg_color',
+		'name' => __('Top nav background color', 'dazzling'),
+		'desc' => __('Default used if no color is selected.', 'dazzling'),
+		'id'   => 'top_nav_bg_color',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Top nav item color', 'sparkling'),
-		'desc' => esc_html__('Link color', 'sparkling'),
-		'id'   => 'nav_link_color',
+		'name' => __('Top nav item color', 'dazzling'),
+		'desc' => __('Link color', 'dazzling'),
+		'id'   => 'top_nav_link_color',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Top nav item hover color', 'sparkling'),
-		'desc' => esc_html__('Link:hover color', 'sparkling'),
-		'id'   => 'nav_item_hover_color',
+		'name' => __('Top nav dropdown background color', 'dazzling'),
+		'desc' => __('Background of dropdown item hover color', 'dazzling'),
+		'id'   => 'top_nav_dropdown_bg',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Top nav dropdown background color', 'sparkling'),
-		'desc' => esc_html__('Background of dropdown item hover color', 'sparkling'),
-		'id'   => 'nav_dropdown_bg',
+		'name' => __('Top nav dropdown item color', 'dazzling'),
+		'desc' => __('Dropdown item color', 'dazzling'),
+		'id'   => 'top_nav_dropdown_item',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Top nav dropdown item color', 'sparkling'),
-		'desc' => esc_html__('Dropdown item color', 'sparkling'),
-		'id'   => 'nav_dropdown_item',
-		'std'  => '',
-		'type' => 'color'
-	);
-
-	$options[] = array(
-		'name' => esc_html__('Top nav dropdown item hover color', 'sparkling'),
-		'desc' => esc_html__('Dropdown item hover color', 'sparkling'),
-		'id'   => 'nav_dropdown_item_hover',
-		'std'  => '',
-		'type' => 'color'
-	);
-
-	$options[] = array(
-		'name' => esc_html__('Top nav dropdown item background hover color', 'sparkling'),
-		'desc' => esc_html__('Background of dropdown item hover color', 'sparkling'),
-		'id'   => 'nav_dropdown_bg_hover',
-		'std'  => '',
-		'type' => 'color'
-	);
-
-	$options[] = array(
-		'name' => esc_html__('Footer', 'sparkling'),
+		'name' => __('Footer', 'dazzling'),
 		'type' => 'heading'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Footer widget area background color', 'sparkling'),
+		'name' => __('Footer Widget Area Background Color', 'dazzling'),
 		'id'   => 'footer_widget_bg_color',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Footer background color', 'sparkling'),
+		'name' => __('Footer Background Color', 'dazzling'),
 		'id'   => 'footer_bg_color',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Footer text color', 'sparkling'),
+		'name' => __('Footer Text Color', 'dazzling'),
 		'id'   => 'footer_text_color',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Footer link color', 'sparkling'),
+		'name' => __('Footer Link Color', 'dazzling'),
 		'id'   => 'footer_link_color',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Footer information', 'sparkling'),
-		'desc' => esc_html__('Copyright text in footer', 'sparkling'),
+		'name' => __('Footer information', 'dazzling'),
+		'desc' => __('Copyright text in footer', 'dazzling'),
 		'id'   => 'custom_footer_text',
-		'std'  => '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" >' . get_bloginfo( 'name', 'display' ) . '</a>  All rights reserved.',
+		'std'  => '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" >' . get_bloginfo( 'name', 'display' ) . '</a> '. __('All rights reserved.', 'dazzling'),
 		'type' => 'textarea'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Social', 'sparkling'),
+		'name' => __('Social', 'dazzling'),
 		'type' => 'heading'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Social icon color', 'sparkling'),
-		'desc' => esc_html__('Default used if no color is selected', 'sparkling'),
+		'name' => __('Social Icon Color', 'dazzling'),
+		'desc' => __('Default used if no color is selected', 'dazzling'),
 		'id'   => 'social_color',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Footer social icon color', 'sparkling'),
-		'desc' => esc_html__('Default used if no color is selected', 'sparkling'),
-		'id'   => 'social_footer_color',
+		'name' => __('Social Icon:hover Color', 'dazzling'),
+		'desc' => __('Default used if no color is selected', 'dazzling'),
+		'id'   => 'social_hover_color',
 		'std'  => '',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name'  => esc_html__('Add full URL for your social network profiles', 'sparkling'),
-		'desc'  => esc_html__('Facebook', 'sparkling'),
+		'name' 	=> __('Add full URL for your social network profiles', 'dazzling'),
+		'desc'  => __('Facebook', 'dazzling'),
 		'id'    => 'social_facebook',
 		'std'   => '',
 		'class' => 'mini',
@@ -403,141 +392,125 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'id'    => 'social_twitter',
-		'desc'  => esc_html__('Twitter', 'sparkling'),
+		'id' 		=> 'social_twitter',
+		'desc'  => __('Twitter', 'dazzling'),
 		'std'   => '',
 		'class' => 'mini',
 		'type'  => 'text'
 	);
 
 	$options[] = array(
-		'id'    => 'social_googleplus',
-		'desc'  => esc_html__('Google+', 'sparkling'),
+		'id' 		=> 'social_googleplus',
+		'desc'  => __('Google+', 'dazzling'),
 		'std'   => '',
 		'class' => 'mini',
 		'type'  => 'text'
 	);
 
 	$options[] = array(
-		'id'    => 'social_youtube',
-		'desc'  => esc_html__('Youtube', 'sparkling'),
+		'id' 		=> 'social_youtube',
+		'desc'  => __('Youtube', 'dazzling'),
 		'std'   => '',
 		'class' => 'mini',
 		'type'  => 'text'
 	);
 
 	$options[] = array(
-		'id'    => 'social_vimeo',
-		'desc'  => esc_html__('Vimeo', 'sparkling'),
+		'id' 		=> 'social_linkedin',
+		'desc'  => __('LinkedIn', 'dazzling'),
 		'std'   => '',
 		'class' => 'mini',
 		'type'  => 'text'
 	);
 
 	$options[] = array(
-		'id'    => 'social_linkedin',
-		'desc'  => esc_html__('LinkedIn', 'sparkling'),
+		'id' 		=> 'social_pinterest',
+		'desc'  => __('Pinterest', 'dazzling'),
 		'std'   => '',
 		'class' => 'mini',
 		'type'  => 'text'
 	);
 
 	$options[] = array(
-		'id'    => 'social_pinterest',
-		'desc'  => esc_html__('Pinterest', 'sparkling'),
+		'id' 		=> 'social_rss',
+		'desc'  => __('RSS Feed', 'dazzling'),
 		'std'   => '',
 		'class' => 'mini',
 		'type'  => 'text'
 	);
 
 	$options[] = array(
-		'id'    => 'social_rss',
-		'desc'  => esc_html__('RSS Feed', 'sparkling'),
+		'id' 		=> 'social_tumblr',
+		'desc'  => __('Tumblr', 'dazzling'),
 		'std'   => '',
 		'class' => 'mini',
 		'type'  => 'text'
 	);
 
 	$options[] = array(
-		'id'    => 'social_tumblr',
-		'desc'  => esc_html__('Tumblr', 'sparkling'),
+		'id' 		=> 'social_flickr',
+		'desc'  => __('Flickr', 'dazzling'),
 		'std'   => '',
 		'class' => 'mini',
 		'type'  => 'text'
 	);
 
 	$options[] = array(
-		'id'    => 'social_flickr',
-		'desc'  => esc_html__('Flickr', 'sparkling'),
+		'id' 		=> 'social_instagram',
+		'desc'  => __('Instagram', 'dazzling'),
 		'std'   => '',
 		'class' => 'mini',
 		'type'  => 'text'
 	);
 
 	$options[] = array(
-		'id'    => 'social_instagram',
-		'desc'  => esc_html__('Instagram', 'sparkling'),
+		'id' 		=> 'social_dribbble',
+		'desc'  => __('Dribbble', 'dazzling'),
 		'std'   => '',
 		'class' => 'mini',
 		'type'  => 'text'
 	);
 
 	$options[] = array(
-		'id'    => 'social_dribbble',
-		'desc'  => esc_html__('Dribbble', 'sparkling'),
+		'id' 		=> 'social_skype',
+		'desc'  => __('Skype', 'dazzling'),
 		'std'   => '',
 		'class' => 'mini',
 		'type'  => 'text'
 	);
 
 	$options[] = array(
-		'id'    => 'social_skype',
-		'desc'  => esc_html__('Skype', 'sparkling'),
+		'id' 		=> 'social_github',
+		'desc'  => __('Github', 'dazzling'),
 		'std'   => '',
 		'class' => 'mini',
 		'type'  => 'text'
 	);
 
 	$options[] = array(
-		'id'    => 'social_foursquare',
-		'desc'  => esc_html__('Foursquare', 'sparkling'),
+		'id' 		=> 'social_slideshare',
+		'desc'  => __('Slideshare', 'dazzling'),
 		'std'   => '',
 		'class' => 'mini',
 		'type'  => 'text'
 	);
 
 	$options[] = array(
-		'id'    => 'social_soundcloud',
-		'desc'  => esc_html__('SoundCloud', 'sparkling'),
+		'id' 		=> 'social_vk',
+		'desc'  => __('VK.com', 'dazzling'),
 		'std'   => '',
 		'class' => 'mini',
 		'type'  => 'text'
 	);
 
 	$options[] = array(
-		'id'    => 'social_github',
-		'desc'  => esc_html__('GitHub', 'sparkling'),
-		'std'   => '',
-		'class' => 'mini',
-		'type'  => 'text'
-	);
-
-	$options[] = array(
-		'id'    => 'social_spotify',
-		'desc'  => esc_html__('Spotify', 'sparkling'),
-		'std'   => '',
-		'class' => 'mini',
-		'type'  => 'text'
-	);
-
-	$options[] = array(
-		'name' => esc_html__('Other', 'sparkling'),
+		'name' => __('Other', 'dazzling'),
 		'type' => 'heading'
 	);
 
 	$options[] = array(
-		'name' => esc_html__('Custom CSS', 'sparkling'),
-		'desc' => esc_html__('Additional CSS', 'sparkling'),
+		'name' => __('Custom CSS', 'dazzling'),
+		'desc' => __('Additional CSS', 'dazzling'),
 		'id'   => 'custom_css',
 		'std'  => '',
 		'type' => 'textarea'

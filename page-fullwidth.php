@@ -4,32 +4,28 @@
  *
  * This is the template that displays full width page without sidebar
  *
- * @package sparkling
+ * @package dazzling
  */
 
 get_header(); ?>
+<div id="content" class="site-content container">
+	<div id="primary" class="content-area col-sm-12 col-md-12">
+		<main id="main" class="site-main" role="main">
 
-  <div id="primary" class="content-area">
+			<?php while ( have_posts() ) : the_post(); ?>
 
-    <main id="main" class="site-main" role="main">
+				<?php get_template_part( 'content', 'page' ); ?>
 
-      <?php while ( have_posts() ) : the_post(); ?>
+				<?php
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || '0' != get_comments_number() ) :
+						comments_template();
+					endif;
+				?>
 
-        <?php get_template_part( 'content', 'page' ); ?>
+			<?php endwhile; // end of the loop. ?>
 
-        <?php
-          // If comments are open or we have at least one comment, load up the comment template
-          if ( get_theme_mod( 'sparkling_page_comments' ) == 1 ) :
-            if ( comments_open() || '0' != get_comments_number() ) :
-              comments_template();
-            endif;
-          endif;
-        ?>
-
-      <?php endwhile; // end of the loop. ?>
-
-    </main><!-- #main -->
-
-  </div><!-- #primary -->
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
 <?php get_footer(); ?>

@@ -4,7 +4,7 @@
  *
  * This file is centrally included from `wp-content/mu-plugins/wpcom-theme-compat.php`.
  *
- * @package sparkling
+ * @package dazzling
  */
 
 /**
@@ -13,7 +13,7 @@
  * @global array $themecolors
  * @return void
  */
-function sparkling_wpcom_setup() {
+function dazzling_wpcom_setup() {
 	global $themecolors;
 
 	// Set theme colors for third party services.
@@ -27,4 +27,4 @@ function sparkling_wpcom_setup() {
 		);
 	}
 }
-add_action( 'after_setup_theme', 'sparkling_wpcom_setup' );
+add_action( 'after_setup_theme', 'dazzling_wpcom_setup' );

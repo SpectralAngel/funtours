@@ -1,41 +1,29 @@
 <?php
 /**
- * Sparkling functions and definitions
+ * Dazzling functions and definitions
  *
- * @package sparkling
+ * @package dazzling
  */
 
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 648; /* pixels */
+	$content_width = 730; /* pixels */
 }
 
 /**
  * Set the content width for full width pages with no sidebar.
  */
-function sparkling_content_width() {
-  if ( is_page_template( 'page-fullwidth.php' ) ) {
+function dazzling_content_width() {
+  if ( is_page_template( 'page-fullwidth.php' ) || is_page_template( 'front-page.php' ) ) {
     global $content_width;
-    $content_width = 1008; /* pixels */
+    $content_width = 1110; /* pixels */
   }
 }
-add_action( 'template_redirect', 'sparkling_content_width' );
+add_action( 'template_redirect', 'dazzling_content_width' );
 
-if ( ! function_exists( 'sparkling_main_content_bootstrap_classes' ) ) :
-/**
- * Add Bootstrap classes to the main-content-area wrapper.
- */
-function sparkling_main_content_bootstrap_classes() {
-	if ( is_page_template( 'page-fullwidth.php' ) ) {
-		return 'col-sm-12 col-md-12';
-	}
-	return 'col-sm-12 col-md-8';
-}
-endif; // sparkling_main_content_bootstrap_classes
-
-if ( ! function_exists( 'sparkling_setup' ) ) :
+if ( ! function_exists( 'dazzling_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -43,50 +31,43 @@ if ( ! function_exists( 'sparkling_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function sparkling_setup() {
+function dazzling_setup() {
 
   /*
    * Make theme available for translation.
    * Translations can be filed in the /languages/ directory.
+   * If you're building a theme based on Dazzling, use a find and replace
+   * to change 'dazzling' to the name of your theme in all the template files
    */
-  load_theme_textdomain( 'sparkling', get_template_directory() . '/languages' );
+  load_theme_textdomain( 'dazzling', get_template_directory() . '/languages' );
 
   // Add default posts and comments RSS feed links to head.
   add_theme_support( 'automatic-feed-links' );
 
-  /**
+  /*
    * Enable support for Post Thumbnails on posts and pages.
    *
    * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
    */
   add_theme_support( 'post-thumbnails' );
 
-  add_image_size( 'sparkling-featured', 750, 410, true );
+  add_image_size( 'dazzling-featured', 730, 410, true );
   add_image_size( 'tab-small', 60, 60 , true); // Small Thumbnail
 
   // This theme uses wp_nav_menu() in one location.
   register_nav_menus( array(
-    'primary'      => esc_html__( 'Primary Menu', 'sparkling' ),
-    'footer-links' => esc_html__( 'Footer Links', 'sparkling' ) // secondary nav in footer
+    'primary'      => __( 'Primary Menu', 'dazzling' ),
+    'footer-links' => __( 'Footer Links', 'dazzling' ) // secondary menu in footer
   ) );
 
   // Enable support for Post Formats.
   add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
   // Setup the WordPress core custom background feature.
-  add_theme_support( 'custom-background', apply_filters( 'sparkling_custom_background_args', array(
-    'default-color' => 'F2F2F2',
-    'default-image' => '',
+  add_theme_support( 'custom-background', apply_filters( 'dazzling_custom_background_args', array(
+  	'default-color' => 'ffffff',
+  	'default-image' => '',
   ) ) );
-
-  // Enable support for HTML5 markup.
-  add_theme_support( 'html5', array(
-    'comment-list',
-    'search-form',
-    'comment-form',
-    'gallery',
-    'caption',
-  ) );
 
   /*
    * Let WordPress manage the document title.
@@ -95,28 +76,26 @@ function sparkling_setup() {
    * provide it for us.
    */
   add_theme_support( 'title-tag' );
-
 }
-endif; // sparkling_setup
-add_action( 'after_setup_theme', 'sparkling_setup' );
+endif; // dazzling_setup
+add_action( 'after_setup_theme', 'dazzling_setup' );
 
 /**
  * Register widgetized area and update sidebar with default widgets.
  */
-function sparkling_widgets_init() {
+function dazzling_widgets_init() {
   register_sidebar( array(
-    'name'          => esc_html__( 'Sidebar', 'sparkling' ),
+    'name'          => __( 'Sidebar', 'dazzling' ),
     'id'            => 'sidebar-1',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget'  => '</aside>',
     'before_title'  => '<h3 class="widget-title">',
     'after_title'   => '</h3>',
-  ));
-
+  ) );
   register_sidebar(array(
     'id'            => 'home-widget-1',
-    'name'          => esc_html__( 'Homepage Widget 1', 'sparkling' ),
-    'description'   => esc_html__( 'Displays on the Home Page', 'sparkling' ),
+    'name'          => __( 'Homepage Widget 1', 'dazzling' ),
+    'description'   => __( 'Displays on the Home Page', 'dazzling' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h3 class="widgettitle">',
@@ -125,8 +104,8 @@ function sparkling_widgets_init() {
 
   register_sidebar(array(
     'id'            => 'home-widget-2',
-    'name'          => esc_html__( 'Homepage Widget 2', 'sparkling' ),
-    'description'   => esc_html__( 'Displays on the Home Page', 'sparkling' ),
+    'name'          =>  __( 'Homepage Widget 2', 'dazzling' ),
+    'description'   => __( 'Displays on the Home Page', 'dazzling' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h3 class="widgettitle">',
@@ -135,8 +114,8 @@ function sparkling_widgets_init() {
 
   register_sidebar(array(
     'id'            => 'home-widget-3',
-    'name'          =>  esc_html__( 'Homepage Widget 3', 'sparkling' ),
-    'description'   =>  esc_html__( 'Displays on the Home Page', 'sparkling' ),
+    'name'          =>  __( 'Homepage Widget 3', 'dazzling' ),
+    'description'   =>  __( 'Displays on the Home Page', 'dazzling' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h3 class="widgettitle">',
@@ -145,8 +124,8 @@ function sparkling_widgets_init() {
 
   register_sidebar(array(
     'id'            => 'footer-widget-1',
-    'name'          =>  esc_html__( 'Footer Widget 1', 'sparkling' ),
-    'description'   =>  esc_html__( 'Used for footer widget area', 'sparkling' ),
+    'name'          =>  __( 'Footer Widget 1', 'dazzling' ),
+    'description'   =>  __( 'Used for footer widget area', 'dazzling' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h3 class="widgettitle">',
@@ -155,8 +134,8 @@ function sparkling_widgets_init() {
 
   register_sidebar(array(
     'id'            => 'footer-widget-2',
-    'name'          =>  esc_html__( 'Footer Widget 2', 'sparkling' ),
-    'description'   =>  esc_html__( 'Used for footer widget area', 'sparkling' ),
+    'name'          =>  __( 'Footer Widget 2', 'dazzling' ),
+    'description'   =>  __( 'Used for footer widget area', 'dazzling' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h3 class="widgettitle">',
@@ -165,119 +144,99 @@ function sparkling_widgets_init() {
 
   register_sidebar(array(
     'id'            => 'footer-widget-3',
-    'name'          =>  esc_html__( 'Footer Widget 3', 'sparkling' ),
-    'description'   =>  esc_html__( 'Used for footer widget area', 'sparkling' ),
+    'name'          =>  __( 'Footer Widget 3', 'dazzling' ),
+    'description'   =>  __( 'Used for footer widget area', 'dazzling' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h3 class="widgettitle">',
     'after_title'   => '</h3>',
   ));
 
-  register_widget( 'sparkling_social_widget' );
-  register_widget( 'sparkling_popular_posts' );
-  register_widget( 'sparkling_categories' );
 
+  register_widget( 'dazzling_popular_posts_widget' );
 }
-add_action( 'widgets_init', 'sparkling_widgets_init' );
+add_action( 'widgets_init', 'dazzling_widgets_init' );
 
+include(get_template_directory() . "/inc/popular-posts-widget.php");
 
-/* --------------------------------------------------------------
-       Theme Widgets
--------------------------------------------------------------- */
-require_once(get_template_directory() . '/inc/widgets/widget-categories.php');
-require_once(get_template_directory() . '/inc/widgets/widget-social.php');
-require_once(get_template_directory() . '/inc/widgets/widget-popular-posts.php');
-
-
-/**
- * This function removes inline styles set by WordPress gallery.
- */
-function sparkling_remove_gallery_css( $css ) {
-  return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
-}
-
-add_filter( 'gallery_style', 'sparkling_remove_gallery_css' );
 
 /**
  * Enqueue scripts and styles.
  */
-function sparkling_scripts() {
+function dazzling_scripts() {
 
-  // Add Bootstrap default CSS
-  wp_enqueue_style( 'sparkling-bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.min.css' );
+  wp_enqueue_style( 'dazzling-bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.min.css' );
 
-  // Add Font Awesome stylesheet
-  wp_enqueue_style( 'sparkling-icons', get_template_directory_uri().'/inc/css/font-awesome.min.css' );
+	// Add Modernizr for better HTML5 and CSS3 support
+	wp_enqueue_script('sparkling-modernizr', get_template_directory_uri().'/inc/js/modernizr.min.js', array('jquery') );
 
-  // Add Google Fonts
-  wp_register_style( 'sparkling-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700|Roboto+Slab:400,300,700');
+	// Add Bootstrap default JS
+	wp_enqueue_script('sparkling-bootstrapjs', get_template_directory_uri().'/inc/js/bootstrap.min.js', array('jquery') );
 
-  wp_enqueue_style( 'sparkling-fonts' );
+  wp_enqueue_style( 'dazzling-icons', get_template_directory_uri().'/inc/css/font-awesome.min.css' );
 
-  // Add slider CSS only if is front page ans slider is enabled
-  if( ( is_home() || is_front_page() ) && of_get_option('sparkling_slider_checkbox') == 1 ) {
-    wp_enqueue_style( 'flexslider-css', get_template_directory_uri().'/inc/css/flexslider.css' );
+	if( is_home()) {
+		wp_enqueue_script('fun-tours-device', get_template_directory_uri().'/template/js/device.min.js');
+		wp_enqueue_script('jquery-easing', get_template_directory_uri().'/template/js/jquery.easing.1.3.js');
+		wp_enqueue_script('tmstickup', get_template_directory_uri().'/template/js/tmstickup.js');
+		wp_enqueue_script('jquery-cookie', get_template_directory_uri().'/template/js/jquery.cookie.js');
+		wp_enqueue_script('jquery-ui-totop', get_template_directory_uri().'/template/js/jquery.ui.totop.js');
+		wp_enqueue_script('jquery-equalheights', get_template_directory_uri().'/template/js/jquery.equalheights.js');
+		wp_enqueue_script('jquery-mousewheel', get_template_directory_uri().'/template/js/jquery.mousewheel.min.js');
+		wp_enqueue_script('jquery-smoothscroll', get_template_directory_uri().'/template/js/jquery.simplr.smoothscroll.min.js');
+		wp_enqueue_script('jquery-cookie', get_template_directory_uri().'/template/js/jquery.cookie.js');
+		wp_enqueue_script('jquery-fancybox', get_template_directory_uri().'/template/js/jquery.fancybox.js');
+		wp_enqueue_script('jquery-fancybox-media', get_template_directory_uri().'/template/js/jquery.fancybox-media.js');
+		wp_enqueue_script('jquery-fancybox-buttons', get_template_directory_uri().'/template/js/jquery.fancybox-buttons.js');
+		wp_enqueue_script('jquery-parallax', get_template_directory_uri().'/template/js/jquery.rd-parallax.js');
+		wp_enqueue_script('superfish-js', get_template_directory_uri().'/template/js/superfish.js');
+		wp_enqueue_script('jquery-navbar', get_template_directory_uri().'/template/js/jquery.rd-navbar.js');
+		wp_enqueue_script('jquery-googlemap', get_template_directory_uri().'/template/js/jquery.rd-google-map.js');
+		wp_enqueue_script('wow', get_template_directory_uri().'/template/js/wow.js');
+		wp_enqueue_script('camera', get_template_directory_uri().'/template/js/camera.js');
+		wp_enqueue_script('jquery-ui', get_template_directory_uri().'/template/js/booking/jquery-ui-1.10.3.custom.min.js');
+		wp_enqueue_script('jquery-placeholder', get_template_directory_uri().'/template/js/booking/jquery.placeholder.js');
+		wp_enqueue_script('jquery-placeholder', get_template_directory_uri().'/template/js/booking/booking/regula.js');
+		wp_enqueue_script('mobile', get_template_directory_uri().'/template/js/jquery.mobile.customized.min.js');
+		wp_enqueue_style( 'sytle-css', get_template_directory_uri() . '/template/css/style.css' );
+		wp_enqueue_style( 'camera-css', get_template_directory_uri() . '/template/css/camera.css' );
+		wp_enqueue_style( 'fancybox-css', get_template_directory_uri() . '/template/css/jquery.fancybox.css' );
+		wp_enqueue_style( 'booking-css', get_template_directory_uri() . '/template/css/booking.css' );
+	}
+  if( ( is_home() || is_front_page() ) && of_get_option('dazzling_slider_checkbox') == 1 ) {
+  	wp_enqueue_style( 'flexslider-css', get_template_directory_uri().'/inc/css/flexslider.css' );
   }
 
-  // Add main theme stylesheet
-  wp_enqueue_style( 'sparkling-style', get_stylesheet_uri() );
-
-  // Add Modernizr for better HTML5 and CSS3 support
-  wp_enqueue_script('sparkling-modernizr', get_template_directory_uri().'/inc/js/modernizr.min.js', array('jquery') );
-
-  // Add Bootstrap default JS
-  wp_enqueue_script('sparkling-bootstrapjs', get_template_directory_uri().'/inc/js/bootstrap.min.js', array('jquery') );
-  
-  if( is_home()) {
-	wp_enqueue_script('fun-tours-device', get_template_directory_uri().'/template/js/device.min.js');
-	wp_enqueue_script('jquery-easing', get_template_directory_uri().'/template/js/jquery.easing.1.3.js');
-	wp_enqueue_script('tmstickup', get_template_directory_uri().'/template/js/tmstickup.js');
-	wp_enqueue_script('jquery-cookie', get_template_directory_uri().'/template/js/jquery.cookie.js');
-	wp_enqueue_script('jquery-ui-totop', get_template_directory_uri().'/template/js/jquery.ui.totop.js');
-	wp_enqueue_script('jquery-equalheights', get_template_directory_uri().'/template/js/jquery.equalheights.js');
-	wp_enqueue_script('jquery-mousewheel', get_template_directory_uri().'/template/js/jquery.mousewheel.min.js');
-	wp_enqueue_script('jquery-smoothscroll', get_template_directory_uri().'/template/js/jquery.simplr.smoothscroll.min.js');
-	wp_enqueue_script('jquery-cookie', get_template_directory_uri().'/template/js/jquery.cookie.js');
-	wp_enqueue_script('jquery-fancybox', get_template_directory_uri().'/template/js/jquery.fancybox.js');
-	wp_enqueue_script('jquery-fancybox-media', get_template_directory_uri().'/template/js/jquery.fancybox-media.js');
-	wp_enqueue_script('jquery-fancybox-buttons', get_template_directory_uri().'/template/js/jquery.fancybox-buttons.js');
-	wp_enqueue_script('jquery-parallax', get_template_directory_uri().'/template/js/jquery.rd-parallax.js');
-	wp_enqueue_script('superfish-js', get_template_directory_uri().'/template/js/superfish.js');
-	wp_enqueue_script('jquery-navbar', get_template_directory_uri().'/template/js/jquery.rd-navbar.js');
-	wp_enqueue_script('jquery-googlemap', get_template_directory_uri().'/template/js/jquery.rd-google-map.js');
-	wp_enqueue_script('wow', get_template_directory_uri().'/template/js/wow.js');
-	wp_enqueue_script('camera', get_template_directory_uri().'/template/js/camera.js');
-	wp_enqueue_script('jquery-ui', get_template_directory_uri().'/template/js/booking/jquery-ui-1.10.3.custom.min.js');
-	wp_enqueue_script('jquery-placeholder', get_template_directory_uri().'/template/js/booking/jquery.placeholder.js');
-	wp_enqueue_script('jquery-placeholder', get_template_directory_uri().'/template/js/booking/booking/regula.js');
-	wp_enqueue_script('mobile', get_template_directory_uri().'/template/js/jquery.mobile.customized.min.js');
-    wp_enqueue_style( 'sytle-css', get_template_directory_uri() . '/template/css/style.css' );
-    wp_enqueue_style( 'camera-css', get_template_directory_uri() . '/template/css/camera.css' );
-    wp_enqueue_style( 'fancybox-css', get_template_directory_uri() . '/template/css/jquery.fancybox.css' );
-    wp_enqueue_style( 'booking-css', get_template_directory_uri() . '/template/css/booking.css' );
-	
+  if ( class_exists( 'jigoshop' ) ) { // Jigoshop specific styles loaded only when plugin is installed
+    wp_enqueue_style( 'jigoshop-css', get_template_directory_uri().'/inc/css/jigoshop.css' );
   }
 
-  if( ( is_home() || is_front_page() ) && of_get_option('sparkling_slider_checkbox') == 1 ) {
-	
-    // Add slider JS only if is front page ans slider is enabled
-    wp_enqueue_script( 'flexslider-js', get_template_directory_uri() . '/inc/js/flexslider.min.js', array('jquery'), '20140222', true );
-    // Flexslider customization
-    wp_enqueue_script( 'flexslider-customization', get_template_directory_uri() . '/inc/js/flexslider-custom.js', array('jquery', 'flexslider-js'), '20140716', true );
+  wp_enqueue_style( 'dazzling-style', get_stylesheet_uri() );
+
+  wp_enqueue_script('dazzling-bootstrapjs', get_template_directory_uri().'/inc/js/bootstrap.min.js', array('jquery') );
+
+  if( ( is_home() || is_front_page() ) && of_get_option('dazzling_slider_checkbox') == 1 ) {
+  	wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/inc/js/flexslider.min.js', array('jquery'), '2.2.2', true );
   }
 
-  // Main theme related functions
-  wp_enqueue_script( 'sparkling-functions', get_template_directory_uri() . '/inc/js/functions.min.js', array('jquery') );
+  wp_enqueue_script( 'dazzling-main', get_template_directory_uri() . '/inc/js/main.js', array('jquery') );
 
-  // This one is for accessibility
-  wp_enqueue_script( 'sparkling-skip-link-focus-fix', get_template_directory_uri() . '/inc/js/skip-link-focus-fix.js', array(), '20140222', true );
-
-  // Treaded comments
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-    wp_enqueue_script( 'comment-reply' );
+  	wp_enqueue_script( 'comment-reply' );
   }
 }
-add_action( 'wp_enqueue_scripts', 'sparkling_scripts' );
+add_action( 'wp_enqueue_scripts', 'dazzling_scripts' );
+
+/**
+ * Add HTML5 shiv and Respond.js for IE8 support of HTML5 elements and media queries
+ */
+function dazzling_ie_support_header() {
+  echo '<!--[if lt IE 9]>'. "\n";
+  echo '<script src="' . esc_url( get_template_directory_uri() . '/inc/js/html5shiv.min.js' ) . '"></script>'. "\n";
+  echo '<script src="' . esc_url( get_template_directory_uri() . '/inc/js/respond.min.js' ) . '"></script>'. "\n";
+  echo '<![endif]-->'. "\n";
+}
+add_action( 'wp_head', 'dazzling_ie_support_header', 11 );
 
 /*
  * Loads the Options Panel
@@ -285,7 +244,6 @@ add_action( 'wp_enqueue_scripts', 'sparkling_scripts' );
  * If you're loading from a child theme use stylesheet_directory
  * instead of template_directory
  */
-
 define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/admin/' );
 require_once dirname( __FILE__ ) . '/inc/admin/options-framework.php';
 // Loads options.php from child or parent theme
@@ -321,3 +279,17 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load custom nav walker
  */
 require get_template_directory() . '/inc/navwalker.php';
+
+if ( class_exists( 'woocommerce' ) ) {
+/**
+ * WooCommerce related functions
+ */
+require get_template_directory() . '/inc/woo-setup.php';
+}
+
+if ( class_exists( 'jigoshop' ) ) {
+/**
+ * Jigoshop related functions
+ */
+require get_template_directory() . '/inc/jigoshop-setup.php';
+}
