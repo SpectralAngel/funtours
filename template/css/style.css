@@ -144,9 +144,6 @@ strong {
 /*=======================================================
                        Main Layout
 =========================================================*/
-* + .row {
-  margin-top: 61px;
-}
 
 * + .off1 {
   margin-top: 47px;
@@ -367,17 +364,18 @@ p + .pricing-table {
 }
 
 /*=================   Product List   ===================*/
-.product-list li {
+.product-list .product {
   -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
   background: #fff;
+    padding-left: 0;
+    padding-right: 0;
 }
-.product-list li h3,
-.product-list li p {
+.product-list .product .description {
   padding: 0 48px;
 }
-.product-list li p {
+.product-list .product .description p {
   font-size: 14px;
   line-height: 23px;
   color: #a5a5a5;
@@ -389,7 +387,7 @@ p + .pricing-table {
   padding-top: 52px;
 }
 @media (max-width: 767px) {
-  .product-list li img {
+  .product-list .product img {
     width: 100%;
   }
 }

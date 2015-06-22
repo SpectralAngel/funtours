@@ -8,11 +8,8 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<?php
-	wp_enqueue_style( 'fun-tours-grid-css', get_template_directory_uri() . '/template/css/grid.css' );
-	wp_enqueue_style( 'sytle-css', get_template_directory_uri() . '/template/css/style.css' );
-	wp_enqueue_style( 'camera-css', get_template_directory_uri() . '/template/css/camera.css' );
-	wp_enqueue_style( 'fancybox-css', get_template_directory_uri() . '/template/css/jquery.fancybox.css' );
-	wp_enqueue_style( 'booking-css', get_template_directory_uri() . '/template/css/booking.css' );
+	// wp_enqueue_style( 'fun-tours-grid-css', get_template_directory_uri() . '/template/css/grid.css' );
+
 	?>
 	<?php wp_head(); ?>
 	<style type="text/css">
@@ -41,15 +38,15 @@
 		<div class="camera_container">
 			<div id="camera" class="camera_wrap">
 				<div
-					data-src="<?php bloginfo('template_directory'); ?>/template/images/page-1_slide01.jpg">
+					data-src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_slide01.jpg">
 					<div class="camera_caption fadeIn"></div>
 				</div>
 				<div
-					data-src="<?php bloginfo('template_directory'); ?>/template/images/page-1_slide02.jpg">
+					data-src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_slide02.jpg">
 					<div class="camera_caption fadeIn"></div>
 				</div>
 				<div
-					data-src="<?php bloginfo('template_directory'); ?>/template/images/page-1_slide03.jpg">
+					data-src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_slide03.jpg">
 					<div class="camera_caption fadeIn"></div>
 				</div>
 			</div>
@@ -63,49 +60,77 @@
 	<main>
 		<section class="well bg-color1">
 			<div class="container">
-				<h2 class="center">Let's enjoy the wonders of the<br/>nature
-					together!</h2>
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="text-center">Let's enjoy the wonders of the
+							<br/>nature together!</h2>
 
-				<p class="txt1 off1 center">Csenim admin sciporiosam nasaer.
-					Veasisi ut aliquimonseq uatueras niuasuis autem. Maerser
-					saveler eumiure repasce nasukerdas rerertas asuis autem
-					veleumiure.</p>
-				<ul class="product-list row">
-					<li class="grid_4 wow fadeInLeft"><img
-							src="<?php bloginfo('template_directory'); ?>/template/images/page-1_img01.jpg"
-							alt="">
+						<p class="txt1 off1 text-center">Csenim admin
+							sciporiosam nasaer.
+							Veasisi ut aliquimonseq uatueras niuasuis autem.
+							Maerser
+							saveler eumiure repasce nasukerdas rerertas asuis
+							autem
+							veleumiure.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="product-list">
+						<div class="col-md-4">
+							<div class="col-md-12 product wow fadeInLeft">
+								<img
+									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img01.jpg"
+									alt="">
+								<div class="description">
+									<h3 class="text-center"><a href="#">Quality Consultation</a></h3>
+									<p>Vaserbo nerafaes sety krscakertsvitae
+										asaloreo qui
+										ratione voluptate kjahsaus. Asqui dolorem
+										ipsum,
+										quia dolor.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="col-md-12 product wow fadeIn">
+								<div class="description">
+									<h3 class="text-center"><a href="#">Travel Center</a></h3>
 
-						<h3><a href="#">Quality Consultation</a></h3>
+									<p>Bautsrkertyu rsvitae ertyasnemo lasec
+										vasptaia
+										goertayse. Lerernatur auteas oditaut ratione
+										voluptate kjahsaus.</p>
+								</div>
+								<img
+									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img02.jpg"
+									alt="">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="col-md-12 wow product fadeInRight">
+								<img
+									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img03.jpg"
+									alt="">
+								<div class="description">
+									<h3><a href="#">Luxury Travel</a></h3>
 
-						<p>Vaserbo nerafaes sety krscakertsvitae asaloreo qui
-							ratione voluptate kjahsaus. Asqui dolorem ipsum,
-							quia dolor.</p>
-					</li>
-					<li class="grid_4 wow fadeIn">
-						<h3><a href="#">Travel Center</a></h3>
-
-						<p>Bautsrkertyu rsvitae ertyasnemo lasec vasptaia
-							goertayse. Lerernatur auteas oditaut ratione
-							voluptate kjahsaus.</p><img
-							src="<?php bloginfo('template_directory'); ?>/template/images/page-1_img02.jpg"
-							alt="">
-					</li>
-					<li class="grid_4 wow fadeInRight"><img
-							src="<?php bloginfo('template_directory'); ?>/template/images/page-1_img03.jpg"
-							alt="">
-
-						<h3><a href="#">Luxury Travel</a></h3>
-
-						<p>Sety krscakertsvitae asaloreo quide ratione voluptate
-							kjahsaus. Sertuserbo dolor mierta vitrdasas.</p>
-					</li>
-				</ul>
-				<p class="txt1 center">Derase reprehenderit, qui in ea voluptate
-					velit eslertase, quam nihil molestiae consequatur. vel
-					illum, quidolorem eum fugiat, quo voluptas nulla pariatur.
-					Csenim admin sciporiosam nasaerasisi ut aliquimonses
-					sertasmiutasa kertyaesre veriuyasa uatasuis autemeumiure
-					repasce nasukerdas rerertas. </p>
+									<p>Sety krscakertsvitae asaloreo quide ratione
+										voluptate
+										kjahsaus. Sertuserbo dolor mierta
+										vitrdasas.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<p class="txt1 text-center">Derase reprehenderit, qui in ea voluptate
+						velit eslertase, quam nihil molestiae consequatur. vel
+						illum, quidolorem eum fugiat, quo voluptas nulla pariatur.
+						Csenim admin sciporiosam nasaerasisi ut aliquimonses
+						sertasmiutasa kertyaesre veriuyasa uatasuis autemeumiure
+						repasce nasukerdas rerertas. </p>
+				</div>
 			</div>
 		</section>
 		<section class="well2">
@@ -119,7 +144,7 @@
 					<article class="grid_6 wow fadeInRight">
 						<div class="row">
 							<div class="grid_3"><img
-									src="<?php bloginfo('template_directory'); ?>/template/images/page-1_img04.jpg"
+									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img04.jpg"
 									alt="" class="mg-add"></div>
 							<div class="grid_3">
 								<time datetime="2015-10-13">13/10</time>
@@ -133,10 +158,11 @@
 							</div>
 						</div>
 					</article>
-					<article data-wow-delay=".2s" class="grid_6 wow fadeInRight">
+					<article data-wow-delay=".2s"
+					         class="grid_6 wow fadeInRight">
 						<div class="row">
 							<div class="grid_3"><img
-									src="<?php bloginfo('template_directory'); ?>/template/images/page-1_img05.jpg"
+									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img05.jpg"
 									alt="" class="mg-add"></div>
 							<div class="grid_3">
 								<time datetime="2015-10-12">12/10</time>
@@ -156,7 +182,7 @@
 					         class="grid_6 wow fadeInRight">
 						<div class="row">
 							<div class="grid_3"><img
-									src="<?php bloginfo('template_directory'); ?>/template/images/page-1_img06.jpg"
+									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img06.jpg"
 									alt="" class="mg-add"></div>
 							<div class="grid_3">
 								<time datetime="2015-10-11">11/10</time>
@@ -175,7 +201,7 @@
 					         class="grid_6 wow fadeInRight">
 						<div class="row">
 							<div class="grid_3"><img
-									src="<?php bloginfo('template_directory'); ?>/template/images/page-1_img07.jpg"
+									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img07.jpg"
 									alt="" class="mg-add"></div>
 							<div class="grid_3">
 								<time datetime="2015-10-10">10/10</time>
@@ -195,65 +221,102 @@
 			</div>
 		</section>
 		<section class="gallery">
-			<a href="<?php bloginfo('template_directory'); ?>/template/images/page-1_img08_original.jpg" data-fancybox-group="1" class="thumb">
-				<img src="<?php bloginfo('template_directory'); ?>/template/images/page-1_img08.jpg" alt="">
-				<span class="thumb_overlay"></span><span class="thumb_overlay_cnt">sauntmagni dolores</span>
+			<a href="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img08_original.jpg"
+			   data-fancybox-group="1" class="thumb">
+				<img
+					src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img08.jpg"
+					alt="">
+				<span class="thumb_overlay"></span><span
+					class="thumb_overlay_cnt">sauntmagni dolores</span>
 			</a>
-			<a href="<?php bloginfo('template_directory'); ?>/template/images/page-1_img09_original.jpg" data-fancybox-group="1" class="thumb">
-				<img src="<?php bloginfo('template_directory'); ?>/template/images/page-1_img09.jpg" alt="">
-				<span class="thumb_overlay"></span><span class="thumb_overlay_cnt">lement velursu</span>
+			<a href="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img09_original.jpg"
+			   data-fancybox-group="1" class="thumb">
+				<img
+					src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img09.jpg"
+					alt="">
+				<span class="thumb_overlay"></span><span
+					class="thumb_overlay_cnt">lement velursu</span>
 			</a>
-			<a href="<?php bloginfo('template_directory'); ?>/template/images/page-1_img10_original.jpg" data-fancybox-group="1" class="thumb">
-				<img src="<?php bloginfo('template_directory'); ?>/template/images/page-1_img10.jpg" alt="">
-				<span class="thumb_overlay"></span><span class="thumb_overlay_cnt">edaty fenanec</span>
+			<a href="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img10_original.jpg"
+			   data-fancybox-group="1" class="thumb">
+				<img
+					src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img10.jpg"
+					alt="">
+				<span class="thumb_overlay"></span><span
+					class="thumb_overlay_cnt">edaty fenanec</span>
 			</a>
-			<a href="<?php bloginfo('template_directory'); ?>/template/images/page-1_img11_original.jpg" data-fancybox-group="1" class="thumb">
-				<img src="<?php bloginfo('template_directory'); ?>/template/images/page-1_img11.jpg" alt="">
-				<span class="thumb_overlay"></span><span class="thumb_overlay_cnt">sauntmagni dolores</span>
+			<a href="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img11_original.jpg"
+			   data-fancybox-group="1" class="thumb">
+				<img
+					src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img11.jpg"
+					alt="">
+				<span class="thumb_overlay"></span><span
+					class="thumb_overlay_cnt">sauntmagni dolores</span>
 			</a>
-			<a href="<?php bloginfo('template_directory'); ?>/template/images/page-1_img12_original.jpg" data-fancybox-group="1" class="thumb">
-				<img src="<?php bloginfo('template_directory'); ?>/template/images/page-1_img12.jpg" alt="">
-				<span class="thumb_overlay"></span><span class="thumb_overlay_cnt">lement velursu</span>
+			<a href="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img12_original.jpg"
+			   data-fancybox-group="1" class="thumb">
+				<img
+					src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img12.jpg"
+					alt="">
+				<span class="thumb_overlay"></span><span
+					class="thumb_overlay_cnt">lement velursu</span>
 			</a>
-			<a href="<?php bloginfo('template_directory'); ?>/template/images/page-1_img13_original.jpg" data-fancybox-group="1" class="thumb">
-				<img src="<?php bloginfo('template_directory'); ?>/template/images/page-1_img13.jpg" alt="">
-				<span class="thumb_overlay"> </span><span class="thumb_overlay_cnt">sauntmagni dolores</span>
+			<a href="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img13_original.jpg"
+			   data-fancybox-group="1" class="thumb">
+				<img
+					src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img13.jpg"
+					alt="">
+				<span class="thumb_overlay"> </span><span
+					class="thumb_overlay_cnt">sauntmagni dolores</span>
 			</a>
 		</section>
 		<section class="well ins1">
 			<div class="container">
 				<h2 class="center">Top Destinations</h2>
+
 				<p class="txt1 center">Selum quidolorem eum fugiatuo voluptas
 					nulla parenim admin sciporiosam nasaerasi.</p>
 				<ul class="pricing-table row">
-					<li data-equal-group="1" data-wow-delay=".3s" class="grid_3 wow fadeInLeft">
+					<li data-equal-group="1" data-wow-delay=".3s"
+					    class="grid_3 wow fadeInLeft">
 						<div>
-						<img src="<?php bloginfo('template_directory'); ?>/template/images/page-1_img14.jpg" alt="">
-						<div class="price">$987.<sup>00</sup></div>
-						<p>Beciegast nveriti vesasety ertya aset aplicabr
-							rtyasnemaso eniptaiades.</p>
-						<a href="#" class="link">More</a>
+							<img
+								src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img14.jpg"
+								alt="">
+
+							<div class="price">$987.<sup>00</sup></div>
+							<p>Beciegast nveriti vesasety ertya aset aplicabr
+								rtyasnemaso eniptaiades.</p>
+							<a href="#" class="link">More</a>
 						</div>
 					</li>
 					<li data-equal-group="1" class="grid_3 wow fadeInLeft">
 						<div>
-						<img src="<?php bloginfo('template_directory'); ?>/template/images/page-1_img15.jpg" alt="">
+							<img
+								src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img15.jpg"
+								alt="">
 
-						<div class="price">$1240.<sup>00</sup></div>
-						<p>Ntreasas kuyrtasacuytrsas leyrtert muyaseas tas bytrasade vtreasa.</p>
-						<a href="#" class="link">More</a>
+							<div class="price">$1240.<sup>00</sup></div>
+							<p>Ntreasas kuyrtasacuytrsas leyrtert muyaseas tas
+								bytrasade vtreasa.</p>
+							<a href="#" class="link">More</a>
 						</div>
 					</li>
 					<li data-equal-group="1" class="grid_3 wow fadeInRight">
-						<img src="<?php bloginfo('template_directory'); ?>/template/images/page-1_img16.jpg" alt="">
+						<img
+							src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img16.jpg"
+							alt="">
 
 						<div class="price">$895.<sup>00</sup></div>
-						<p>Beciegast nveresasety dertya aset aplicabrd yasnesemaso eniptaiades.</p>
+						<p>Beciegast nveresasety dertya aset aplicabrd
+							yasnesemaso eniptaiades.</p>
 						<a href="#" class="link">More</a>
 					</li>
 					<li data-equal-group="1" data-wow-delay=".3s"
 					    class="grid_3 wow fadeInRight">
-						<img src="<?php bloginfo('template_directory'); ?>/template/images/page-1_img17.jpg" alt="">
+						<img
+							src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img17.jpg"
+							alt="">
 
 						<div class="price">$999.<sup>99</sup></div>
 						<p>Ntreasas kuyrtasadcuytrsas leyrterte muyases
@@ -263,8 +326,11 @@
 				</ul>
 			</div>
 		</section>
-		<section data-url="<?php bloginfo('template_directory'); ?>/template/images/parallax1.jpg" data-mobile="true" class="well3 center parallax">
+		<section
+			data-url="<?php bloginfo( 'template_directory' ); ?>/template/images/parallax1.jpg"
+			data-mobile="true" class="well3 center parallax">
 			<h2>Luxury travel</h2>
+
 			<h3>Just got a little bit cheaper</h3>
 			<a href="#" class="btn">More</a>
 		</section>
@@ -301,6 +367,6 @@
 	</footer>
 </div>
 <script
-	src="<?php bloginfo('template_directory'); ?>/template/js/script.js"></script>
+	src="<?php bloginfo( 'template_directory' ); ?>/template/js/script.js"></script>
 </body>
 </html>

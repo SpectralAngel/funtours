@@ -252,6 +252,10 @@ function sparkling_scripts() {
 	wp_enqueue_script('jquery-placeholder', get_template_directory_uri().'/template/js/booking/jquery.placeholder.js');
 	wp_enqueue_script('jquery-placeholder', get_template_directory_uri().'/template/js/booking/booking/regula.js');
 	wp_enqueue_script('mobile', get_template_directory_uri().'/template/js/jquery.mobile.customized.min.js');
+    wp_enqueue_style( 'sytle-css', get_template_directory_uri() . '/template/css/style.css' );
+    wp_enqueue_style( 'camera-css', get_template_directory_uri() . '/template/css/camera.css' );
+    wp_enqueue_style( 'fancybox-css', get_template_directory_uri() . '/template/css/jquery.fancybox.css' );
+    wp_enqueue_style( 'booking-css', get_template_directory_uri() . '/template/css/booking.css' );
 	
   }
 
