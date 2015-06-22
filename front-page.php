@@ -68,59 +68,26 @@
 				</div>
 				<div class="row">
 					<div class="product-list">
-						<div class="col-md-4">
-							<div class="col-md-12 product wow fadeInLeft">
-								<img
-									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img01.jpg"
-									alt="">
-
-								<div class="description">
-									<h3 class="text-center"><a href="#">Quality
-											Consultation</a></h3>
-
-									<p>Vaserbo nerafaes sety krscakertsvitae
-										asaloreo qui
-										ratione voluptate kjahsaus. Asqui
-										dolorem
-										ipsum,
-										quia dolor.</p>
+						<?php $posts = get_posts(array(
+							'posts_per_page' => 3,
+							'category_name' => 'destacado'
+						));
+						foreach ( $posts as $post ) : setup_postdata( $post ); ?>
+							<div class="col-md-4">
+								<div class="col-md-12 wow product fadeInLeft">
+									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></h3>
+									<div class="description">
+										<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+										<p>Sety krscakertsvitae asaloreo quide
+											ratione
+											voluptate
+											kjahsaus. Sertuserbo dolor mierta
+											vitrdasas.</p>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="col-md-12 product wow fadeIn">
-								<div class="description">
-									<h3 class="text-center"><a href="#">Travel
-											Center</a></h3>
-
-									<p>Bautsrkertyu rsvitae ertyasnemo lasec
-										vasptaia
-										goertayse. Lerernatur auteas oditaut
-										ratione
-										voluptate kjahsaus.</p>
-								</div>
-								<img
-									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img02.jpg"
-									alt="">
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="col-md-12 wow product fadeInRight">
-								<img
-									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img03.jpg"
-									alt="">
-
-								<div class="description">
-									<h3><a href="#">Luxury Travel</a></h3>
-
-									<p>Sety krscakertsvitae asaloreo quide
-										ratione
-										voluptate
-										kjahsaus. Sertuserbo dolor mierta
-										vitrdasas.</p>
-								</div>
-							</div>
-						</div>
+						<?php endforeach;
+						wp_reset_postdata();?>
 					</div>
 				</div>
 				<div class="row">
