@@ -7,10 +7,6 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-	<?php
-	// wp_enqueue_style( 'fun-tours-grid-css', get_template_directory_uri() . '/template/css/grid.css' );
-
-	?>
 	<?php wp_head(); ?>
 	<style type="text/css">
 		html {
@@ -20,18 +16,18 @@
 </head>
 <body>
 <div class="page">
-	<!--
-	  ========================================================
-								  HEADER
-	  ========================================================
-	  -->
 	<header>
 		<div class="header_panel">
 			<div class="container">
-				<div class="brand">
-					<h1 class="brand_name"><a href="./">Travel</a></h1>
+				<div class="brand col-md-6">
+					<h1 class="brand_name"><a
+							href="<?php home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
+					</h1>
 
 					<p class="brand_slogan">Guide</p>
+				</div>
+				<div class="main-menu">
+					<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 				</div>
 			</div>
 		</div>
@@ -76,11 +72,15 @@
 								<img
 									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img01.jpg"
 									alt="">
+
 								<div class="description">
-									<h3 class="text-center"><a href="#">Quality Consultation</a></h3>
+									<h3 class="text-center"><a href="#">Quality
+											Consultation</a></h3>
+
 									<p>Vaserbo nerafaes sety krscakertsvitae
 										asaloreo qui
-										ratione voluptate kjahsaus. Asqui dolorem
+										ratione voluptate kjahsaus. Asqui
+										dolorem
 										ipsum,
 										quia dolor.</p>
 								</div>
@@ -89,11 +89,13 @@
 						<div class="col-md-4">
 							<div class="col-md-12 product wow fadeIn">
 								<div class="description">
-									<h3 class="text-center"><a href="#">Travel Center</a></h3>
+									<h3 class="text-center"><a href="#">Travel
+											Center</a></h3>
 
 									<p>Bautsrkertyu rsvitae ertyasnemo lasec
 										vasptaia
-										goertayse. Lerernatur auteas oditaut ratione
+										goertayse. Lerernatur auteas oditaut
+										ratione
 										voluptate kjahsaus.</p>
 								</div>
 								<img
@@ -106,10 +108,12 @@
 								<img
 									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img03.jpg"
 									alt="">
+
 								<div class="description">
 									<h3><a href="#">Luxury Travel</a></h3>
 
-									<p>Sety krscakertsvitae asaloreo quide ratione
+									<p>Sety krscakertsvitae asaloreo quide
+										ratione
 										voluptate
 										kjahsaus. Sertuserbo dolor mierta
 										vitrdasas.</p>
@@ -119,9 +123,11 @@
 					</div>
 				</div>
 				<div class="row">
-					<p class="txt1 text-center">Derase reprehenderit, qui in ea voluptate
+					<p class="txt1 text-center">Derase reprehenderit, qui in ea
+						voluptate
 						velit eslertase, quam nihil molestiae consequatur. vel
-						illum, quidolorem eum fugiat, quo voluptas nulla pariatur.
+						illum, quidolorem eum fugiat, quo voluptas nulla
+						pariatur.
 						Csenim admin sciporiosam nasaerasisi ut aliquimonses
 						sertasmiutasa kertyaesre veriuyasa uatasuis autemeumiure
 						repasce nasukerdas rerertas. </p>
@@ -134,7 +140,8 @@
 					<div class="col-md-12">
 						<h2 class="text-center">News & events</h2>
 
-						<p class="txt1 text-center">Penepre henderitui in ea voluptate velit
+						<p class="txt1 text-center">Penepre henderitui in ea
+							voluptate velit
 							eslertase quam nihil molestiae consequatur.</p>
 					</div>
 				</div>
@@ -142,7 +149,9 @@
 					<article class="col-md-6 wow fadeInRight">
 						<div class="row">
 							<div class="col-md-6">
-								<img src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img04.jpg" alt="" class="mg-add">
+								<img
+									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img04.jpg"
+									alt="" class="mg-add">
 							</div>
 							<div class="col-md-6">
 								<time datetime="2015-10-13">13/10</time>
@@ -156,16 +165,20 @@
 							</div>
 						</div>
 					</article>
-					<article data-wow-delay=".2s" class="col-md-6 wow fadeInRight">
+					<article data-wow-delay=".2s"
+					         class="col-md-6 wow fadeInRight">
 						<div class="row">
 							<div class="col-md-6">
-								<img src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img05.jpg" alt="" class="mg-add">
+								<img
+									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img05.jpg"
+									alt="" class="mg-add">
 							</div>
 							<div class="col-md-6">
 								<time datetime="2015-10-12">12/10</time>
 								<h5 class="primary"><a href="#">Leugiata
 										lesrleceas ctrasi ices phaledaty fenanec
 										sitets aser erment dopegete.</a></h5>
+
 								<p>Moleacene anrit meases dey uam socis natoqu
 									eagnis dimte dulmuese feugiata lesuerleceas
 									strices phaledaty.</p>
@@ -174,10 +187,13 @@
 					</article>
 				</div>
 				<div class="row">
-					<article data-wow-delay=".4s" class="col-md-6 wow fadeInRight">
+					<article data-wow-delay=".4s"
+					         class="col-md-6 wow fadeInRight">
 						<div class="row">
 							<div class="col-md-6">
-								<img src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img06.jpg" alt="" class="mg-add">
+								<img
+									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img06.jpg"
+									alt="" class="mg-add">
 							</div>
 							<div class="col-md-6">
 								<time datetime="2015-10-11">11/10</time>
@@ -192,10 +208,13 @@
 							</div>
 						</div>
 					</article>
-					<article data-wow-delay=".6s" class="col-md-6 wow fadeInRight">
+					<article data-wow-delay=".6s"
+					         class="col-md-6 wow fadeInRight">
 						<div class="row">
 							<div class="col-md-6">
-								<img src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img07.jpg" alt="" class="mg-add">
+								<img
+									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img07.jpg"
+									alt="" class="mg-add">
 							</div>
 							<div class="col-md-6">
 								<time datetime="2015-10-10">10/10</time>
@@ -203,6 +222,7 @@
 										lesuerle serceas strices phaledaty
 										fenanec site aser erment dolose.</a>
 								</h5>
+
 								<p>Veases dey vileacene anritma uam socis natoqu
 									eagnis dimte dulmuese feugiata lesuerleceas
 									strices phaledaty fenanec sit aser
@@ -267,10 +287,12 @@
 			<div class="container">
 				<h2 class="text-center">Top Destinations</h2>
 
-				<p class="txt1 text-center">Selum quidolorem eum fugiatuo voluptas
+				<p class="txt1 text-center">Selum quidolorem eum fugiatuo
+					voluptas
 					nulla parenim admin sciporiosam nasaerasi.</p>
 				<ul class="pricing-table row">
-					<li data-equal-group="1" data-wow-delay=".3s" class="col-md-3 wow fadeInLeft">
+					<li data-equal-group="1" data-wow-delay=".3s"
+					    class="col-md-3 wow fadeInLeft">
 						<div class="inner-price">
 							<img
 								src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img14.jpg"
@@ -296,26 +318,27 @@
 					</li>
 					<li data-equal-group="1" class="col-md-3 wow fadeInRight">
 						<div class="inner-price">
-						<img
-							src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img16.jpg"
-							alt="">
+							<img
+								src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img16.jpg"
+								alt="">
 
-						<div class="price">$895.<sup>00</sup></div>
-						<p>Beciegast nveresasety dertya aset aplicabrd
-							yasnesemaso eniptaiades.</p>
-						<a href="#" class="link">More</a>
+							<div class="price">$895.<sup>00</sup></div>
+							<p>Beciegast nveresasety dertya aset aplicabrd
+								yasnesemaso eniptaiades.</p>
+							<a href="#" class="link">More</a>
 						</div>
 					</li>
-					<li data-equal-group="1" data-wow-delay=".3s" class="col-md-3 wow fadeInRight">
+					<li data-equal-group="1" data-wow-delay=".3s"
+					    class="col-md-3 wow fadeInRight">
 						<div class="inner-price">
-						<img
-							src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img17.jpg"
-							alt="">
+							<img
+								src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img17.jpg"
+								alt="">
 
-						<div class="price">$999.<sup>99</sup></div>
-						<p>Ntreasas kuyrtasadcuytrsas leyrterte muyases
-							litaytrade vtreasa.</p>
-						<a href="#" class="link">More</a>
+							<div class="price">$999.<sup>99</sup></div>
+							<p>Ntreasas kuyrtasadcuytrsas leyrterte muyases
+								litaytrade vtreasa.</p>
+							<a href="#" class="link">More</a>
 						</div>
 					</li>
 				</ul>
@@ -326,6 +349,7 @@
 				data-url="<?php bloginfo( 'template_directory' ); ?>/template/images/parallax1.jpg"
 				data-mobile="true" class="well3 text-center parallax col-md-12">
 				<h2>Luxury travel</h2>
+
 				<h3>Just got a little bit cheaper</h3>
 				<a href="#" class="btn">More</a>
 			</section>
