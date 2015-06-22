@@ -343,6 +343,9 @@ p + .pricing-table {
 .inline-list {
   display: inline-block;
 }
+.inline-list li {
+    list-style: none;
+}
 .inline-list:before, .inline-list:after {
   display: table;
   content: "";
@@ -417,12 +420,16 @@ time + h5 {
 
 /*================   Pricing Table   ===================*/
 .pricing-table li {
-  padding: 9px 9px 40px;
+  padding: 9px 9px 0px;
   text-align: center;
-  border: 1px solid #eaeaea;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+}
+.pricing-table .inner-price {
+    border: 1px solid #eaeaea;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-bottom: 40px;
+    padding-top: 9px;
 }
 .pricing-table li:first-child .price,
 .pricing-table li:first-child .link {
@@ -838,7 +845,7 @@ footer address {
   line-height: 36px;
   text-transform: uppercase;
 }
-footer div[class^="grid"] {
+footer .middle-align {
   position: relative;
   top: 50%;
   -moz-transform: translateY(-50%);

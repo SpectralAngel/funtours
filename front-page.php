@@ -52,11 +52,6 @@
 			</div>
 		</div>
 	</header>
-	<!--
-	  ========================================================
-								  CONTENT
-	  ========================================================
-	  -->
 	<main>
 		<section class="well bg-color1">
 			<div class="container">
@@ -135,18 +130,21 @@
 		</section>
 		<section class="well2">
 			<div class="container">
-				<h2 class="center">News & events</h2>
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="text-center">News & events</h2>
 
-				<p class="txt1 center">Penepre henderitui in ea voluptate velit
-					eslertase quam nihil molestiae consequatur.</p>
-
+						<p class="txt1 text-center">Penepre henderitui in ea voluptate velit
+							eslertase quam nihil molestiae consequatur.</p>
+					</div>
+				</div>
 				<div class="row off2">
-					<article class="grid_6 wow fadeInRight">
+					<article class="col-md-6 wow fadeInRight">
 						<div class="row">
-							<div class="grid_3"><img
-									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img04.jpg"
-									alt="" class="mg-add"></div>
-							<div class="grid_3">
+							<div class="col-md-6">
+								<img src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img04.jpg" alt="" class="mg-add">
+							</div>
+							<div class="col-md-6">
 								<time datetime="2015-10-13">13/10</time>
 								<h5 class="primary"><a href="#">Cenaserleceas
 										strices phal edaty fenanec sit aser
@@ -158,18 +156,16 @@
 							</div>
 						</div>
 					</article>
-					<article data-wow-delay=".2s"
-					         class="grid_6 wow fadeInRight">
+					<article data-wow-delay=".2s" class="col-md-6 wow fadeInRight">
 						<div class="row">
-							<div class="grid_3"><img
-									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img05.jpg"
-									alt="" class="mg-add"></div>
-							<div class="grid_3">
+							<div class="col-md-6">
+								<img src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img05.jpg" alt="" class="mg-add">
+							</div>
+							<div class="col-md-6">
 								<time datetime="2015-10-12">12/10</time>
 								<h5 class="primary"><a href="#">Leugiata
 										lesrleceas ctrasi ices phaledaty fenanec
 										sitets aser erment dopegete.</a></h5>
-
 								<p>Moleacene anrit meases dey uam socis natoqu
 									eagnis dimte dulmuese feugiata lesuerleceas
 									strices phaledaty.</p>
@@ -178,13 +174,12 @@
 					</article>
 				</div>
 				<div class="row">
-					<article data-wow-delay=".4s"
-					         class="grid_6 wow fadeInRight">
+					<article data-wow-delay=".4s" class="col-md-6 wow fadeInRight">
 						<div class="row">
-							<div class="grid_3"><img
-									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img06.jpg"
-									alt="" class="mg-add"></div>
-							<div class="grid_3">
+							<div class="col-md-6">
+								<img src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img06.jpg" alt="" class="mg-add">
+							</div>
+							<div class="col-md-6">
 								<time datetime="2015-10-11">11/10</time>
 								<h5 class="primary"><a href="#">Senanec sit aser
 										erment dolor apegete. Cuyras esuerleceas
@@ -197,19 +192,17 @@
 							</div>
 						</div>
 					</article>
-					<article data-wow-delay=".6s"
-					         class="grid_6 wow fadeInRight">
+					<article data-wow-delay=".6s" class="col-md-6 wow fadeInRight">
 						<div class="row">
-							<div class="grid_3"><img
-									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img07.jpg"
-									alt="" class="mg-add"></div>
-							<div class="grid_3">
+							<div class="col-md-6">
+								<img src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img07.jpg" alt="" class="mg-add">
+							</div>
+							<div class="col-md-6">
 								<time datetime="2015-10-10">10/10</time>
 								<h5 class="primary"><a href="#">Dolouyts ta
 										lesuerle serceas strices phaledaty
 										fenanec site aser erment dolose.</a>
 								</h5>
-
 								<p>Veases dey vileacene anritma uam socis natoqu
 									eagnis dimte dulmuese feugiata lesuerleceas
 									strices phaledaty fenanec sit aser
@@ -226,60 +219,59 @@
 				<img
 					src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img08.jpg"
 					alt="">
-				<span class="thumb_overlay"></span><span
-					class="thumb_overlay_cnt">sauntmagni dolores</span>
+				<span class="thumb_overlay"></span>
+				<span class="thumb_overlay_cnt">sauntmagni dolores</span>
 			</a>
 			<a href="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img09_original.jpg"
 			   data-fancybox-group="1" class="thumb">
 				<img
 					src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img09.jpg"
 					alt="">
-				<span class="thumb_overlay"></span><span
-					class="thumb_overlay_cnt">lement velursu</span>
+				<span class="thumb_overlay"></span>
+				<span class="thumb_overlay_cnt">lement velursu</span>
 			</a>
 			<a href="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img10_original.jpg"
 			   data-fancybox-group="1" class="thumb">
 				<img
 					src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img10.jpg"
 					alt="">
-				<span class="thumb_overlay"></span><span
-					class="thumb_overlay_cnt">edaty fenanec</span>
+				<span class="thumb_overlay"></span>
+				<span class="thumb_overlay_cnt">edaty fenanec</span>
 			</a>
 			<a href="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img11_original.jpg"
 			   data-fancybox-group="1" class="thumb">
 				<img
 					src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img11.jpg"
 					alt="">
-				<span class="thumb_overlay"></span><span
-					class="thumb_overlay_cnt">sauntmagni dolores</span>
+				<span class="thumb_overlay"></span>
+				<span class="thumb_overlay_cnt">sauntmagni dolores</span>
 			</a>
 			<a href="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img12_original.jpg"
 			   data-fancybox-group="1" class="thumb">
 				<img
 					src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img12.jpg"
 					alt="">
-				<span class="thumb_overlay"></span><span
-					class="thumb_overlay_cnt">lement velursu</span>
+				<span class="thumb_overlay"></span>
+				<span class="thumb_overlay_cnt">lement velursu</span>
 			</a>
 			<a href="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img13_original.jpg"
 			   data-fancybox-group="1" class="thumb">
 				<img
 					src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img13.jpg"
 					alt="">
-				<span class="thumb_overlay"> </span><span
-					class="thumb_overlay_cnt">sauntmagni dolores</span>
+				<span class="thumb_overlay"> </span>
+				<span class="thumb_overlay_cnt">sauntmagni dolores</span>
 			</a>
 		</section>
 		<section class="well ins1">
 			<div class="container">
-				<h2 class="center">Top Destinations</h2>
+				<h2 class="text-center">Top Destinations</h2>
 
-				<p class="txt1 center">Selum quidolorem eum fugiatuo voluptas
+				<p class="txt1 text-center">Selum quidolorem eum fugiatuo voluptas
 					nulla parenim admin sciporiosam nasaerasi.</p>
 				<ul class="pricing-table row">
-					<li data-equal-group="1" data-wow-delay=".3s"
-					    class="grid_3 wow fadeInLeft">
-						<div>
+					<li data-equal-group="1" data-wow-delay=".3s" class="col-md-3 wow fadeInLeft">
+						<div class="inner-price">
 							<img
 								src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img14.jpg"
 								alt="">
@@ -290,8 +282,8 @@
 							<a href="#" class="link">More</a>
 						</div>
 					</li>
-					<li data-equal-group="1" class="grid_3 wow fadeInLeft">
-						<div>
+					<li data-equal-group="1" class="col-md-3 wow fadeInLeft">
+						<div class="inner-price">
 							<img
 								src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img15.jpg"
 								alt="">
@@ -302,7 +294,8 @@
 							<a href="#" class="link">More</a>
 						</div>
 					</li>
-					<li data-equal-group="1" class="grid_3 wow fadeInRight">
+					<li data-equal-group="1" class="col-md-3 wow fadeInRight">
+						<div class="inner-price">
 						<img
 							src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img16.jpg"
 							alt="">
@@ -311,9 +304,10 @@
 						<p>Beciegast nveresasety dertya aset aplicabrd
 							yasnesemaso eniptaiades.</p>
 						<a href="#" class="link">More</a>
+						</div>
 					</li>
-					<li data-equal-group="1" data-wow-delay=".3s"
-					    class="grid_3 wow fadeInRight">
+					<li data-equal-group="1" data-wow-delay=".3s" class="col-md-3 wow fadeInRight">
+						<div class="inner-price">
 						<img
 							src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img17.jpg"
 							alt="">
@@ -322,28 +316,25 @@
 						<p>Ntreasas kuyrtasadcuytrsas leyrterte muyases
 							litaytrade vtreasa.</p>
 						<a href="#" class="link">More</a>
+						</div>
 					</li>
 				</ul>
 			</div>
 		</section>
-		<section
-			data-url="<?php bloginfo( 'template_directory' ); ?>/template/images/parallax1.jpg"
-			data-mobile="true" class="well3 center parallax">
-			<h2>Luxury travel</h2>
-
-			<h3>Just got a little bit cheaper</h3>
-			<a href="#" class="btn">More</a>
-		</section>
+		<div class="row">
+			<section
+				data-url="<?php bloginfo( 'template_directory' ); ?>/template/images/parallax1.jpg"
+				data-mobile="true" class="well3 text-center parallax col-md-12">
+				<h2>Luxury travel</h2>
+				<h3>Just got a little bit cheaper</h3>
+				<a href="#" class="btn">More</a>
+			</section>
+		</div>
 	</main>
-	<!--
-	  ========================================================
-								  FOOTER
-	  ========================================================
-	  -->
 	<footer class="mobile-center">
 		<div class="container">
 			<div class="row">
-				<div class="grid_4">
+				<div class="col-md-4 middle-align">
 					<ul class="inline-list">
 						<li><a href="#" class="fa-twitter"></a></li>
 						<li><a href="#" class="fa-google-plus"></a></li>
@@ -351,16 +342,16 @@
 						<li><a href="#" class="fa-rss"></a></li>
 					</ul>
 				</div>
-				<div class="grid_3">
+				<div class="col-md-3 middle-align">
 					<address>28 Jackson Blvd Ste 1020 Chicago<br/> IL 60604-2340
 					</address>
 				</div>
-				<div class="grid_5"><a href="mailto:#" class="fa-envelope">info@demolink.org</a>
+				<div class="col-md-5 middle-align">
+					<a href="mailto:#" class="fa-envelope">info@demolink.org</a>
 
 					<div class="copyright"> © <span id="copyright-year"></span>
 						| All rights reserved
 					</div>
-					<!-- {%FOOTER_LINK} -->
 				</div>
 			</div>
 		</div>
