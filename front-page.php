@@ -116,7 +116,7 @@
 				<div class="row off2">
 					<?php $posts = get_posts(array(
 						'posts_per_page' => 2,
-						'category_name' => 'destacado'
+						'category_name' => 'linea-1'
 					));
 					foreach ( $posts as $post ) : setup_postdata( $post ); ?>
 					<article class="col-md-6 wow fadeInRight">
@@ -142,7 +142,7 @@
 				<div class="row">
 					<?php $posts = get_posts(array(
 						'posts_per_page' => 2,
-						'category_name' => 'destacado'
+						'category_name' => 'linea-2'
 					));
 					foreach ( $posts as $post ) : setup_postdata( $post ); ?>
 						<article data-wow-delay=".4s" class="col-md-6 wow fadeInRight">
@@ -226,7 +226,7 @@
 				<ul class="pricing-table row">
 					<?php $posts = get_posts(array(
 						'posts_per_page' => 4,
-						'category_name' => 'destacado'
+						'category_name' => 'top'
 					));
 					foreach ( $posts as $post ) : setup_postdata( $post ); ?>
 					<li data-equal-group="1" data-wow-delay=".3s"
