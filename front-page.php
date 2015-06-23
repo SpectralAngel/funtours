@@ -70,7 +70,7 @@
 					<div class="product-list">
 						<?php $posts = get_posts(array(
 							'posts_per_page' => 3,
-							'category_name' => 'destacado'
+							'category_name' => 'destacados'
 						));
 						foreach ( $posts as $post ) : setup_postdata( $post ); ?>
 							<div class="col-md-4">
