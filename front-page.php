@@ -165,6 +165,32 @@
 					<?php endforeach;
 					wp_reset_postdata();?>
 				</div>
+				<div class="row">
+					<?php $posts = get_posts(array(
+						'posts_per_page' => 2,
+						'category_name' => 'linea-3'
+					));
+					foreach ( $posts as $post ) : setup_postdata( $post ); ?>
+						<article data-wow-delay=".4s" class="col-md-6 wow fadeInRight">
+							<div class="row">
+								<div class="col-md-6">
+									<?php the_post_thumbnail('post-thumbnail', array('class' => 'mg-add')); ?>
+								</div>
+								<div class="col-md-6">
+									<div class="time"><?php the_title(); ?></div>
+									<h5 class="primary"><a href="<?php the_permalink(); ?>">Cenaserleceas
+											strices phal edaty fenanec sit aser
+											rment lement velursu.</a></h5>
+
+									<p>Ut ts dolor apegement velu rsusen elnean ctor
+										wisetaurna aserta. Aliam eratvpa miuyas tis
+										ac turpis. </p>
+								</div>
+							</div>
+						</article>
+					<?php endforeach;
+					wp_reset_postdata();?>
+				</div>
 			</div>
 		</section>
 		<section class="gallery">
