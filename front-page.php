@@ -114,16 +114,19 @@
 					</div>
 				</div>
 				<div class="row off2">
+					<?php $posts = get_posts(array(
+						'posts_per_page' => 2,
+						'category_name' => 'destacado'
+					));
+					foreach ( $posts as $post ) : setup_postdata( $post ); ?>
 					<article class="col-md-6 wow fadeInRight">
 						<div class="row">
 							<div class="col-md-6">
-								<img
-									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img04.jpg"
-									alt="" class="mg-add">
+								<?php the_post_thumbnail('post-thumbnail', array('class' => 'mg-add')); ?>
 							</div>
 							<div class="col-md-6">
-								<time datetime="2015-10-13">13/10</time>
-								<h5 class="primary"><a href="#">Cenaserleceas
+								<div class="time"><?php the_title(); ?></div>
+								<h5 class="primary"><a href="<?php the_permalink(); ?>">Cenaserleceas
 										strices phal edaty fenanec sit aser
 										rment lement velursu.</a></h5>
 
@@ -133,71 +136,34 @@
 							</div>
 						</div>
 					</article>
-					<article data-wow-delay=".2s"
-					         class="col-md-6 wow fadeInRight">
-						<div class="row">
-							<div class="col-md-6">
-								<img
-									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img05.jpg"
-									alt="" class="mg-add">
-							</div>
-							<div class="col-md-6">
-								<time datetime="2015-10-12">12/10</time>
-								<h5 class="primary"><a href="#">Leugiata
-										lesrleceas ctrasi ices phaledaty fenanec
-										sitets aser erment dopegete.</a></h5>
-
-								<p>Moleacene anrit meases dey uam socis natoqu
-									eagnis dimte dulmuese feugiata lesuerleceas
-									strices phaledaty.</p>
-							</div>
-						</div>
-					</article>
+					<?php endforeach;
+					wp_reset_postdata();?>
 				</div>
 				<div class="row">
-					<article data-wow-delay=".4s"
-					         class="col-md-6 wow fadeInRight">
-						<div class="row">
-							<div class="col-md-6">
-								<img
-									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img06.jpg"
-									alt="" class="mg-add">
-							</div>
-							<div class="col-md-6">
-								<time datetime="2015-10-11">11/10</time>
-								<h5 class="primary"><a href="#">Senanec sit aser
-										erment dolor apegete. Cuyras esuerleceas
-										strices phaledaty.</a></h5>
+					<?php $posts = get_posts(array(
+						'posts_per_page' => 2,
+						'category_name' => 'destacado'
+					));
+					foreach ( $posts as $post ) : setup_postdata( $post ); ?>
+						<article data-wow-delay=".4s" class="col-md-6 wow fadeInRight">
+							<div class="row">
+								<div class="col-md-6">
+									<?php the_post_thumbnail('post-thumbnail', array('class' => 'mg-add')); ?>
+								</div>
+								<div class="col-md-6">
+									<div class="time"><?php the_title(); ?></div>
+									<h5 class="primary"><a href="<?php the_permalink(); ?>">Cenaserleceas
+											strices phal edaty fenanec sit aser
+											rment lement velursu.</a></h5>
 
-								<p>Sepegement velu miutasase rsusen elnean ctor
-									wisetaurna aserta. Aliam eratvpa miuyas tis
-									ac turpis. Cinteger rutrum kertyua
-									delertante.</p>
+									<p>Ut ts dolor apegement velu rsusen elnean ctor
+										wisetaurna aserta. Aliam eratvpa miuyas tis
+										ac turpis. </p>
+								</div>
 							</div>
-						</div>
-					</article>
-					<article data-wow-delay=".6s"
-					         class="col-md-6 wow fadeInRight">
-						<div class="row">
-							<div class="col-md-6">
-								<img
-									src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img07.jpg"
-									alt="" class="mg-add">
-							</div>
-							<div class="col-md-6">
-								<time datetime="2015-10-10">10/10</time>
-								<h5 class="primary"><a href="#">Dolouyts ta
-										lesuerle serceas strices phaledaty
-										fenanec site aser erment dolose.</a>
-								</h5>
-
-								<p>Veases dey vileacene anritma uam socis natoqu
-									eagnis dimte dulmuese feugiata lesuerleceas
-									strices phaledaty fenanec sit aser
-									erment. </p>
-							</div>
-						</div>
-					</article>
+						</article>
+					<?php endforeach;
+					wp_reset_postdata();?>
 				</div>
 			</div>
 		</section>
@@ -254,61 +220,27 @@
 		<section class="well ins1">
 			<div class="container">
 				<h2 class="text-center">Top Destinations</h2>
-
 				<p class="txt1 text-center">Selum quidolorem eum fugiatuo
 					voluptas
 					nulla parenim admin sciporiosam nasaerasi.</p>
 				<ul class="pricing-table row">
+					<?php $posts = get_posts(array(
+						'posts_per_page' => 4,
+						'category_name' => 'destacado'
+					));
+					foreach ( $posts as $post ) : setup_postdata( $post ); ?>
 					<li data-equal-group="1" data-wow-delay=".3s"
 					    class="col-md-3 wow fadeInLeft">
 						<div class="inner-price">
-							<img
-								src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img14.jpg"
-								alt="">
-
-							<div class="price">$987.<sup>00</sup></div>
+							<?php the_post_thumbnail(); ?>
+							<div class="price"><?php the_title(); ?></div>
 							<p>Beciegast nveriti vesasety ertya aset aplicabr
 								rtyasnemaso eniptaiades.</p>
-							<a href="#" class="link">More</a>
+							<a href="<?php the_permalink(); ?>" class="link">More</a>
 						</div>
 					</li>
-					<li data-equal-group="1" class="col-md-3 wow fadeInLeft">
-						<div class="inner-price">
-							<img
-								src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img15.jpg"
-								alt="">
-
-							<div class="price">$1240.<sup>00</sup></div>
-							<p>Ntreasas kuyrtasacuytrsas leyrtert muyaseas tas
-								bytrasade vtreasa.</p>
-							<a href="#" class="link">More</a>
-						</div>
-					</li>
-					<li data-equal-group="1" class="col-md-3 wow fadeInRight">
-						<div class="inner-price">
-							<img
-								src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img16.jpg"
-								alt="">
-
-							<div class="price">$895.<sup>00</sup></div>
-							<p>Beciegast nveresasety dertya aset aplicabrd
-								yasnesemaso eniptaiades.</p>
-							<a href="#" class="link">More</a>
-						</div>
-					</li>
-					<li data-equal-group="1" data-wow-delay=".3s"
-					    class="col-md-3 wow fadeInRight">
-						<div class="inner-price">
-							<img
-								src="<?php bloginfo( 'template_directory' ); ?>/template/images/page-1_img17.jpg"
-								alt="">
-
-							<div class="price">$999.<sup>99</sup></div>
-							<p>Ntreasas kuyrtasadcuytrsas leyrterte muyases
-								litaytrade vtreasa.</p>
-							<a href="#" class="link">More</a>
-						</div>
-					</li>
+					<?php endforeach;
+					wp_reset_postdata();?>
 				</ul>
 			</div>
 		</section>
