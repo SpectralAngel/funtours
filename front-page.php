@@ -25,10 +25,13 @@
 					</h1>
 					<p class="brand_slogan">Guide</p>
 				</div>
-				<div id="main-menu-wrapper" class="col-md-6" data-equal-group="5">
-					<div id="main-menu">
-						<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+				<div class="booking_wr">
+					<?php
+					if(is_active_sidebar('front-page-form')){ ?>
+					<div class="booking-form">
+						<?php dynamic_sidebar('front-page-form'); ?>
 					</div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
@@ -78,11 +81,7 @@
 									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></h3>
 									<div class="description">
 										<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-										<p>Sety krscakertsvitae asaloreo quide
-											ratione
-											voluptate
-											kjahsaus. Sertuserbo dolor mierta
-											vitrdasas.</p>
+										<p><?php the_excerpt(); ?></p>
 									</div>
 								</div>
 							</div>
@@ -125,14 +124,12 @@
 								<?php the_post_thumbnail('post-thumbnail', array('class' => 'mg-add')); ?>
 							</div>
 							<div class="col-md-6">
-								<div class="time"><?php the_title(); ?></div>
-								<h5 class="primary"><a href="<?php the_permalink(); ?>">Cenaserleceas
-										strices phal edaty fenanec sit aser
-										rment lement velursu.</a></h5>
+								<div class="time"></div>
+								<h5 class="primary">
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								</h5>
 
-								<p>Ut ts dolor apegement velu rsusen elnean ctor
-									wisetaurna aserta. Aliam eratvpa miuyas tis
-									ac turpis. </p>
+								<p><?php the_excerpt(); ?></p>
 							</div>
 						</div>
 					</article>
@@ -151,14 +148,12 @@
 									<?php the_post_thumbnail('post-thumbnail', array('class' => 'mg-add')); ?>
 								</div>
 								<div class="col-md-6">
-									<div class="time"><?php the_title(); ?></div>
-									<h5 class="primary"><a href="<?php the_permalink(); ?>">Cenaserleceas
-											strices phal edaty fenanec sit aser
-											rment lement velursu.</a></h5>
+									<div class="time"></div>
+									<h5 class="primary">
+										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+									</h5>
 
-									<p>Ut ts dolor apegement velu rsusen elnean ctor
-										wisetaurna aserta. Aliam eratvpa miuyas tis
-										ac turpis. </p>
+									<p><?php the_excerpt(); ?></p>
 								</div>
 							</div>
 						</article>
@@ -177,14 +172,12 @@
 									<?php the_post_thumbnail('post-thumbnail', array('class' => 'mg-add')); ?>
 								</div>
 								<div class="col-md-6">
-									<div class="time"><?php the_title(); ?></div>
-									<h5 class="primary"><a href="<?php the_permalink(); ?>">Cenaserleceas
-											strices phal edaty fenanec sit aser
-											rment lement velursu.</a></h5>
+									<div class="time"></div>
+									<h5 class="primary">
+										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+									</h5>
 
-									<p>Ut ts dolor apegement velu rsusen elnean ctor
-										wisetaurna aserta. Aliam eratvpa miuyas tis
-										ac turpis. </p>
+									<p><?php the_excerpt(); ?></p>
 								</div>
 							</div>
 						</article>
@@ -260,8 +253,7 @@
 						<div class="inner-price">
 							<?php the_post_thumbnail(); ?>
 							<div class="price"><?php the_title(); ?></div>
-							<p>Beciegast nveriti vesasety ertya aset aplicabr
-								rtyasnemaso eniptaiades.</p>
+							<p><?php the_excerpt(); ?></p>
 							<a href="<?php the_permalink(); ?>" class="link">More</a>
 						</div>
 					</li>

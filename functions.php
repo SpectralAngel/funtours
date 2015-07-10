@@ -152,6 +152,11 @@ function dazzling_widgets_init() {
     'after_title'   => '</h3>',
   ));
 
+  register_sidebar( array(
+	  'id' => 'front-page-form',
+      'name' => __( 'Front Page Form', 'dazzling' ),
+      'description' => __( 'Area for Front Page Form', 'twentyeleven' ),
+  ) );
 
   register_widget( 'dazzling_popular_posts_widget' );
 }
