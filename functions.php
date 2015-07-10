@@ -155,7 +155,19 @@ function dazzling_widgets_init() {
   register_sidebar( array(
 	  'id' => 'front-page-form',
       'name' => __( 'Front Page Form', 'dazzling' ),
-      'description' => __( 'Area for Front Page Form', 'twentyeleven' ),
+      'description' => __( 'Area for Front Page Form', 'dazzling' ),
+  ) );
+
+  register_sidebar( array(
+      'id' => 'front-page-first-text',
+      'name' => __( 'Front Page Form', 'dazzling' ),
+      'description' => __( 'Area for Front Page First Text', 'dazzling' ),
+  ) );
+
+  register_sidebar( array(
+      'id' => 'front-page-second-text',
+      'name' => __( 'Front Page Second Text', 'dazzling' ),
+      'description' => __( 'Area for Front Second Text', 'dazzling' ),
   ) );
 
   register_widget( 'dazzling_popular_posts_widget' );

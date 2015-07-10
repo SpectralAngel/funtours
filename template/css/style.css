@@ -906,3 +906,7 @@ footer .container {
     padding: 10px;
     font: 400 50px/20px "Qwigley", cursive;
 }
+#front-page-first-text li {
+  list-style: none;
+  text-align: center;
+}

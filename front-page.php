@@ -57,16 +57,12 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h2 class="text-center">Let's enjoy the wonders of the
-							<br/>nature together!</h2>
-
-						<p class="txt1 off1 text-center">Csenim admin
-							sciporiosam nasaer.
-							Veasisi ut aliquimonseq uatueras niuasuis autem.
-							Maerser
-							saveler eumiure repasce nasukerdas rerertas asuis
-							autem
-							veleumiure.</p>
+						<?php
+						if(is_active_sidebar('front-page-first-text')){ ?>
+							<div id="front-page-first-text" class="text-center">
+								<?php dynamic_sidebar('front-page-first-text'); ?>
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 				<div class="row">
@@ -81,7 +77,7 @@
 									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></h3>
 									<div class="description">
 										<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-										<p><?php the_excerpt(); ?></p>
+										<p class="text-center"><?php the_excerpt(); ?></p>
 									</div>
 								</div>
 							</div>
@@ -90,14 +86,12 @@
 					</div>
 				</div>
 				<div class="row">
-					<p class="txt1 text-center">Derase reprehenderit, qui in ea
-						voluptate
-						velit eslertase, quam nihil molestiae consequatur. vel
-						illum, quidolorem eum fugiat, quo voluptas nulla
-						pariatur.
-						Csenim admin sciporiosam nasaerasisi ut aliquimonses
-						sertasmiutasa kertyaesre veriuyasa uatasuis autemeumiure
-						repasce nasukerdas rerertas. </p>
+					<?php
+					if(is_active_sidebar('front-page-second-text')){ ?>
+						<div>
+							<?php dynamic_sidebar('front-page-second-text'); ?>
+						</div>
+					<?php } ?>
 				</div>
 			</div>
 		</section>
@@ -106,7 +100,6 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h2 class="text-center">News & events</h2>
-
 						<p class="txt1 text-center">Penepre henderitui in ea
 							voluptate velit
 							eslertase quam nihil molestiae consequatur.</p>
