@@ -74,7 +74,7 @@
 						foreach ( $posts as $post ) : setup_postdata( $post ); ?>
 							<div class="col-md-4">
 								<div class="col-md-12 wow product fadeInLeft">
-									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></h3>
+									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 									<div class="description">
 										<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 										<p class="text-center"><?php the_excerpt(); ?></p>
@@ -114,7 +114,7 @@
 					<article class="col-md-6 wow fadeInRight">
 						<div class="row">
 							<div class="col-md-6">
-								<?php the_post_thumbnail('post-thumbnail', array('class' => 'mg-add')); ?>
+								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('post-thumbnail', array('class' => 'mg-add')); ?></a>
 							</div>
 							<div class="col-md-6">
 								<div class="time"></div>
@@ -138,7 +138,7 @@
 						<article data-wow-delay=".4s" class="col-md-6 wow fadeInRight">
 							<div class="row">
 								<div class="col-md-6">
-									<?php the_post_thumbnail('post-thumbnail', array('class' => 'mg-add')); ?>
+									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('post-thumbnail', array('class' => 'mg-add')); ?></a>
 								</div>
 								<div class="col-md-6">
 									<div class="time"></div>
@@ -162,7 +162,7 @@
 						<article data-wow-delay=".4s" class="col-md-6 wow fadeInRight">
 							<div class="row">
 								<div class="col-md-6">
-									<?php the_post_thumbnail('post-thumbnail', array('class' => 'mg-add')); ?>
+									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('post-thumbnail', array('class' => 'mg-add')); ?></a>
 								</div>
 								<div class="col-md-6">
 									<div class="time"></div>
@@ -244,7 +244,7 @@
 					<li data-equal-group="1" data-wow-delay=".3s"
 					    class="col-md-3 wow fadeInLeft">
 						<div class="inner-price">
-							<?php the_post_thumbnail(); ?>
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 							<div class="price"><?php the_title(); ?></div>
 							<p><?php the_excerpt(); ?></p>
 							<a href="<?php the_permalink(); ?>" class="link">More</a>
